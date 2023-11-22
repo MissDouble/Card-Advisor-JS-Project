@@ -298,14 +298,25 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #0126DE; //*custom
+$secondary:     #0470FD; //*custom
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
+$cus-sky:       #9AD7FF;//*custom
+$cus-orange:    #F6BD2B;//*custom
+$cus-black:     #180000;//*custom
+$cus-gray1D:    #1D1D1D;//*custom
+$cus-grey33:    #333333;//*custom
+$cus-grey66:    #666666;//*custom
+$cus-grey9F:    #9F9F9F;//*custom
+$cus-greyD4:    #D4D4D4;//*custom
+$cus-greyE9:    #E9E9E9;//*custom
+$cus-greyF7:    #F7F7F7;//*custom
+
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -317,7 +328,17 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "cus-sky":    $cus-sky,//*custom
+  "cus-orange": $cus-orange,//*custom
+  "cus-black":  $cus-black,//*custom
+  "cus-gray1D": $cus-gray1D,//*custom
+  "cus-grey33": $cus-grey33,//*custom
+  "cus-grey66": $cus-grey66,//*custom
+  "cus-grey9F": $cus-grey9F,//*custom
+  "cus-greyD4": $cus-greyD4,//*custom
+  "cus-greyE9": $cus-greyE9,//*custom
+  "cus-greyF7": $cus-greyF7,//*custom
 ) !default;
 // scss-docs-end theme-colors-map
 
