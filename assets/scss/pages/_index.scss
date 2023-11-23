@@ -1,3 +1,59 @@
 .index-title {
   font-size: 100px;
 }
+
+// below added by angela
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.hero {
+  background-image: url("../images/img_banner.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-top: 5em;
+  padding-bottom: 15em;
+}
+
+.heading,
+.search-bar {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.search-bar {
+  padding: 2em 3em;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.intro-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3em;
+}
+
+.intro-content-2 {
+  text-align: right;
+}
+
+h1 {
+  margin-top: 3em;
+}
+
+h2 {
+  margin-top: 3em;
+}
+
+p {
+  margin-top: 2em;
+}

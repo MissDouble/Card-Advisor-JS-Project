@@ -1,4 +1,21 @@
-.header{
-  background: #69F0AE;
-  font-size: 64px;
+// .header{
+//   background: #69F0AE;
+//   font-size: 64px;
+// }
+
+// below added by angela
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+header ul li {
+  margin-inline: 2em;
 }
