@@ -4,15 +4,213 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-    <script type="module" crossorigin src="/Card-Advisor-JS-Project/assets/main-3317fcb4.js"></script>
-    <link rel="stylesheet" href="/Card-Advisor-JS-Project/assets/main-bf9b440d.css">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ8SURBVHgB5ZoxT9tAFMefk6jq0qqqKlVVhzpdmm5RpXZO+wla9oodNr4BC2IHZoTYgQ+AIDMsjIiBmAEhBiACCTGQGD/DCwk52+/u3tlG/KRIzjlOfv/4zrl7DsAzx4McqTU6rRB6vgfV4Ha/3gYB8gnQ6PheP1yPtppDrUFY8X7Dfj0AC9wHQPkw3IYQfMVe6xBuA6TLE1Yh3AXgyRPGIdwE0JMnjELIBzCTJ7RDyAawkye0QsgFkJEn2CFkAsjKE6wQ9gHcyBOZIewCuJUnUkOYB8hHnkgMYRYgX3lCGUI/QDHyxFgIvQDFyhMjISrsw8ohj+DUfJue8AJoyDe/v4LWr9cjbe/eVuJ2fAjhR04t3KhlvpQpj5JrSx8H8sHxLczMnUH3sh+3436kvXMDE9OncbsN1V7P70HWGND45pfnP8DkvzcjbSRJ8sTswgXMLnbBhodx0E4OoNnnz3e/jIkmgcHe/zwCC4Lw4GsdN9SfWJ4Bq+L+KvTAeABD+ZX1K/ZrNzavwZCM3wGLbx67z9bqJ2g20q80OLh//D02GcTKX+LHM2DZbVBoYuo0Fkw0iPb9+X8iJo8MAkj0eRJUhUjbl/W2abPROABWzKQGrErUlTwSB8ByHwgyLOxSHrkfxNEZGJ5fSOF/rkH3qi/a558yuAp53w47Jbnua1UlBoM49KKDPGAd5BDLulDJFiscxudCJVouclBP5kqyYOcgNhs1xPH9gYKLVhyyF/UFlg058KoSBRVuOfDLKgWUzjnkWRcSl0fyqsw5kUfyqI06k0dcV6edyiPmARDHN7E58GujKiK5hFnsXh7yiN0ZGCauVeLKrhqA0B85XgR3ksjwN0s0gfsAAAAASUVORK5CYII=" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Card Advisor</title>
+    <script type="module" crossorigin src="/Card-Advisor-JS-Project/assets/main-6e118378.js"></script>
+    <link rel="stylesheet" href="/Card-Advisor-JS-Project/assets/main-5088379c.css">
   </head>
   <body>
-    <h1 class="header">我是 header</h1>
+    <!-- header -->
+    <!-- <h1 class="header">我是 header</h1>
 <a href="index.html">index</a>
 <a href="about.html">about</a>
-<a href="contact.html">contact</a>
+<a href="contact.html">contact</a> -->
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="data:image/png;base64,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" alt="icon">
+        </div>
+        <ul>
+            <li><a href="../pages/all-cards.html">所有信用卡</a></li>
+            <li><a href="../pages/search.html">刷哪張好？</a></li>
+            <li><a href="../pages/compare-cards.html">信用卡比一比</a></li>
+        </ul>
+        <a href="#">登入/註冊</a>
+    </div>
+</header>    <!-- 首頁上方白色區域 -->
+    <div>
+        <div class="hero">
+            <div class="heading">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE8AAAA2CAYAAACGGcSPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALYSURBVHgB7ZtNbtpAFMefPbYBZxG6Z0Er9m3FBegJ2iMkCz52pTdoF1233SFYhNwg6QWiHiBSDoAiLyJV3cEGgmPP9D8oiSoEqDDpNHbeTxq9scf2mL/feD78IGIYhmEY5t/ikGU6nU5DKfUW2SpSmbLBWEp5OhgMhn/utCZet9stz2azLxDugLJL5Lrum16vF+kNlywxnU6PMi6cpgoPPEPrqeoNK+I1m80DmHeUD6pwgiOdsdJs2+32GSpsUI4Iw/CZFc+DcK8oZ+A11LD1zstKr/rXwCHK1jqMPMLiGeCRBTA2ek45o1gsjolhGIZhGIbJJVZWVVqtlqKcgbntIU/PDGDxDGDxDGDxDGDxDGDxDGDxDGDxDGDxDGDxDLDyDWMLojX7y7T68+W642nL6+zEZvHqdf/F5WWYzuehTNMwViqkOA4dzythcleiNN3D5LiUum4oiPZwRumnlJ9pBzBXfD0YDC7WlTebza+O47zXedgI6T7gZhseMnphY7Otn58v71KO799N8h0hxCIjpHRISpPJf7RJuEUdQpzc34RS412Euz33Bz0Qj2lV5SM+UR6vK9TBNUse8wHHn9B26CgnHaRTJUP0qgovSe0IL0kZ4kFCB29gUalU/PnVlSjt7/txmnqJlF6glE4iUcpPkZdx7Anf9ySRL7BfW7iUwBPwJcoVzvtF9J2eCB6Eo1qtJsbjsRcQFdRkElCxGEC0gos0VypwYFWSBK7nFdAxFNDLBjdCBGjzBV2WShk4rluAiLjESvF0aEKuIqXQgUV6qKJGo1ECK6tENzF64OT6WqSw8CwX4w+BQgEPc2SSaOtCIQEBF+U+HoC2SsrF9qqKMKy4yFtwI4juxnmpThHEWz5iQuZAvOM8iYffM9RDJSsdBioawmw7rHiU3A7QP+m8td42juNDeN83yjDLM5v/9ScWHRn/krJDhHs+7ff7uWg9DMMwDJMdfgOpLiL+0L89IgAAAABJRU5ErkJggg==">
+                <h1>以輕鬆又快速的方式尋找最佳信用卡</h1>
+                <p>我們為您提供一個簡單而強大的工具，協助您找到當下最適消費的信用卡</p>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-flexwrap">
+                  <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                  <div><a href=""><img src="#">進階搜尋</a></div>
+                </div>
+                <div>熱門：<a href="#">CUBE 卡</a>、<a href="#">小樹點</a>、<a href="">樹享券</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="intro">
+      <div class="container">
+        <div class="intro-block">
+            <div class="intro-content intro-content-1">
+                <div class="intro-tag"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVtSURBVHgB7VldUhs5EO7WEKBqX7jB2oQ1vK05wZoTQE4QcwLICYATACeIfYK1TxDnBPG+BfPj4QTxy1YthlFvtzzYkmaGmbGdrU2Fr8pV9mjU6k9qdX+SAV7xip8bCAtifWdYGZM+AFK/E1IDCDb48UbcPOJPCEih0tSNgqAHX6shLBFzEwh2bpqa1Ht2uFGmH4/YU1q3o+utFiwBpQms7AwbEdFHdrwCiyEkhYe8Ij1YAMUJVIYb6g2ccJgcwxKBgKd6UD2DOVGMAMc5avqTv9VTWkdspU+AXViBHvzNMR9WR6aFScO66VNBgn0gOsgYoc+r8W6e/ZFPQJwn+pQSMiMCuoSxupg6XMAWb+ZTAnif0hrSGHcL24qRSwBrd18gOfNzz5hB9qT0abC5CyWgXmz8bXgOnvMEus0ztbdQOuS+9MCzjdjxWupq+/YcSiBzBUy20TxLFsR5GGw1YYlQtZsWgXJCild3r2h2ylwBkypdhDAOlpqBBHpis28/4/A6Kdo/dQVMkdLKIcCzUs0KG1ktHcG+qcRg4npWiTlDoca+CqD7lDWrkyw39MYrtAqpBHB7yBvMOBO/hC3O1YeQ4ngks1W8GoeK9FlaFVa1W85OeGJ51qOrzb08g0kC6bPhzr4UtVV9zgM2YQ4g0oV+UGdOymSbuErfXhw3BYk9EEDUcEeDrmNECK7RF8/5EcftJT97J4NyKkTzke/8jGep7ThGeMzOfhJb04dCBrHnOCciMQcJAlrjvjOYtlKdzJKXv0kcH2NVX789hkG145CV7/xMDzabQsYjUjfVXap1DG7vOs6wwoWyBNhMxfkZcPZ5fpnDxnWexZg4bkkHqR1c/L7Jx8npTMYQQfxgWa+rNT2Ne61Zitj+w2wfliDgVcd/JilOMpMdNpxxPsB1teUYk30xEXvmTCChkihMV9ULm4S8w6HUMD8eZ5MVYwPmIOB2imeX0+rR8yPJSnD19sLvyAQTMcsONv1nQsKuwtO8n9RBcxFIB+LMOOpSgivVHC1uQ5BGwDUcbzJCmGp2s+y1+4SiTGxC8yyhd0Bt3x854Uj60h4r05cUJAmg1+mXeE9IVbSXHaKWT0KPOT1OMo3YGEmG0mOwNy0E3IcoupjZ4XAcbBm7K+sJ1RtCDlb8B3zw+EzWRlZPuqFjrUIPcIhrPEiciYQEbt/WNapLkzI5hvndZupI8YlOQ2TrqdAmSBBVnDlFuIccpKwAOsKKl3pWF9hBziB7bDictktRYtXKUuCjSAs7DOTGIqjdHJjUukpD7zgaGr1jbVy/BiFQD3JQREqMpFA5GeLlk1UujCwXFerZzJUwKUiugHRwS7ronmP/nbi6HtqrkQsRaDLrcqbwUiZftZz47xY5NKUfaHaGTZ4NW06PeODdTIMcOirSB6S49BPJRnQutjjPf9aB6kAZOW2qvFsoixOQhu27oXdm7ZujZMlDdy5EX7E49MYKWQxWi3TPLGS8WX39XzdaaMnw9ZUZm7DwPVF2JeblFonsGObiI9kGlgFJq2zLP1NI7SgSOs94UUroR3UK3nlVBmSlOXS0fFlIzPN5IPVApFQIJbDIxdbkWlBx5S16xWJOcsAyYqpYU0EQNGHwa7uIyeJXixkkJlaoI9fnGAThk8hv63zwhqVIxNXcFMQSN9lFSZS83NWnvLmPYIkwMc/6C+0D/XMbBLkkyv8/IDVichNRgcXgXq/zrcQ8JOb+gyMudrIa9VL9pBprbKdmmjlILPwXk8lGBAds6A+OhwokL7b4xgJ7GuEv/t7J3fAlSSxO4HsgKWUM0kgUP1L+l/habZn9kcBj7k3d/wuyErU7kg/wLTb8kGASP67zr3jF98e/QWnTCEM1fdcAAAAASUVORK5CYII=">強大搜尋</div>
+                <h2>透過關鍵字輕鬆找到信用卡</h2>
+                <p>只需填寫通路關鍵字，如「蝦皮」、「加油」、或「海外消費」，即可立即查看當下回饋最高的信用卡。不再猶豫，立刻發現最適合您消費習慣的信用卡，讓您輕鬆掌握消費優勢。
+                您將發現選擇信用卡的過程不再是煩惱，而是一個探索的過程，帶來更多選擇、更多優勢，並讓您充分享受每一筆消費。開始探索吧，發現信用卡的無限可能性！</p>
+            </div>
+            <img src="/Card-Advisor-JS-Project/assets/img_about_1-6a7738c2.png">
+        </div>
+        <div class="intro-block">
+            <img src="/Card-Advisor-JS-Project/assets/img_about_2-4ae18657.png">
+            <div class="intro-content intro-content-2">
+                <div class="intro-tag"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAP/SURBVHgB7VjdTRtBEJ5ZG8hb6CBnIgxSHuJUELsCoAKcCkgqMFQAqcCkgkAFOBVAHiIFCzjTgR9JkHcyc+bQ7d6dd9c2IEX+JFu3d/vzze7M7MwALLDAAgv8n3gXN3Dj5gyeGFWYN6J4VS1Bh+7pMzwD5ipAdTNujoi6RBDBM0HBnKA2bvdGms7gGckLZj8BUZllfUg0asMLYDYBmDwu0xkBNuCFML0KPZDnpxcjL5hOgHLyA/4N7b7whJhKAFzRXSggTwpbgHhhLLCsS92pqscdVb/uwmYcwZQIFkAWBcJt6/WY/O/aAEn/yH5g+9iD+pXdHyr1210C2ufvbRTvxS4YpgAG9ead4sVi6+0j+aQ1Vi/pY6oO0gkvlgjHpLf4r2lPT1BpQ//NNwhAkAAcGsSWnx8y+Q+P5FPU420E+g5TgJZ4vl+1C9/+3io0Vh3zkiKkgxx5Qb92QohfYArgPQseYPh+ArDqMNm2sRDgMVy+PSodc1k74tOpccdBaR+EHhF9td5GcjGCJ7xUqLJ51dZadbPvEnJFu18EMVCChtI6AlSvNcJPXvmCx/fks1q/PuIT27Pmb6XfZxbA1n3Zfd2vfYI5Aus355B1zXI6l2st1zi3Cq3HDVv3tYIDmDN4x02bES/lYQtOAZSy3B3vjLfqhEDUBbFnrL2i265hTgGI9Mdsm93jKTwR7EuQj+W9a4yHF8Io29Ko/H10Eiqw+/WEVqqXbfNN7QwUfcLpyGjdgZcAQlxChYdnYKP3sZvBxLWL1gE3TEMa1IauAVnyAnn2Oom8bc1uxKGwyafwFiJ0PY8+5o5PCH3LyKdwCpF3m+7TdnVgt2NPEhVOVEx+YIcSk4SovipMkCbCKQASGK6Nw4FmbpIS8hIOcIjQKhRi4zqX6OiRNvMGhFtwwOMEzAwrSVCykECvhHxilPwrFIKwY6sjj9ky2hpPAGYUQP+BY+vVajZ74hPplJJPkQph6vQqj22nDQkYczWlCt/6DrhPQNymdcVzVtZNDc4uqfDOFucIIoQV7/DY3eSB59KkzI1AOPUJWbzcKGEueIs4TkkXNA3vHsqP/S73LUpIcC01lyxVcR884J1SqvrNMQHsmoNx39Z/6q9NnJPDZnLNERKu++fEkqyv0Lmr9jkpEUmKv5pcJfe8DU2A/03MtsDHugOOy4Xt47Awjud3UrmGyRiGkBeEhRJcLeCqge1NbDS4rHJeTT0VE5dnj9MbJnMH5hphdaEUUh+iuZbSB0x+J6SckmK6YO7Br7P0QUWoIojB0t+wWpA5flZwzoxK3CBtB42TpB2TO6MHM2B2AVKMw4Imx05cNiR5ll9qzEMJCpGwl5RU5Hb3yCsWWGABN/4BqHvEqT6b5OAAAAAASUVORK5CYII=">最新資訊</div>
+                <h2>一覽無遺各家銀行信用卡優惠</h2>
+                <p>瀏覽各家信用卡的優惠、優惠條件以及公告時間，以確保您不會錯過任何優惠。我們將最新的資訊一一呈現，以便您隨時了解信用卡世界的最新動向。</p>
+            </div>
+        </div>
+      </div>
+      </div>
+    <!-- 首頁中間灰色區域 -->
+      <div></div>
+    <!-- 比較信用卡 -->
+      <div class="container">
+        <!-- compare-title  -->
+        <div class="py-9 text-center">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAU3SURBVHgB7Zu7UiM5FIaPgaK4JJ43ME+wprikNtlONGy40XoSbsmYbDPgCcYkXAM8TzDebLM1GQGwnjfwPMH2JhTFdf/fpaZ6XdhjqSV1T42+KpVFu9sNnyUd6bQQCQQCgUAgEAgEAoFA4MeiIBlSr9eLd3d3pfv7+/LY2NhPz8/PVZQS38PPrUKhsHd0dNSVHONNYCwLpTo+Pk5ZZRwuf+OyaGJiYuXg4KAjOcWZwK2trbJqWZURZQ0igvD64eHhJ8kh1gRubGyw+71Dtfz09FRG9yuKRSCxlkeJqQVCXAnizjh+iWPyKHFMUoLW9pcPeeTx8bG5ubn5m+SIVALX1tZW8VISj+RNYiqBvlpeP3mSmEog526SEXmR+F22wJg8SDQWyGmL5ICsJRoL5FxPckKWEo0FYqJcEfdEo56YlURjgfGi3zb4YjoITiszMzNvTk5O3uA+8zg80uQ5C4lGK5FarVacnJz8R+zTgrRfXnsDY24Nw8aZjIDPFYtRC5yamrI+/qHlddHytge9j7RWU3LYEo0EOgog7WTub319/QPKGdfa8TEIbsqI+JJoJNBFAMFY9zWuq8xOA6WGUk+c1hUNfEg0EugqgMTc3t522KVZZ1CJj6MFaqfIXEvUFsgAIubJ0YEkW3Wz2Yymp6fnIWxOjX09mKAVA1xK1I7C7F5MYYkDhkVPjoXqviUxxEV01m6BLlcgbClIkdX7j9uQF3++7Zao3QIRGT9jDFwVt3TRpduqXhqStIhUKYkGNluidgt0HUAUJRWBa33yIiV2m6sVrlRQ5tRqJZNln3YLRBfjCsTqA6NhUBgEnUNYGxP4TqPRiAb8Xn+LZnCz0RInJH9wCnOO0hom7BVMpziSRqK2QM7LLCdS2S1bCBLns7OzLQ1hPdSs4IMYBpi0Ek2mMYyI7C7G3Vh1yz9Q2qenp1q7Dnj/h4eHVXS/Cn6PqqXnz8Y7IIyyMSnngnsY+HdHPZlbQm5ubiiqoqJ/SdwQYZyd192LYzQG4iZtSHw/anopCfJ8jW+do76gCqRVKY/HIE8cU+QGAbyu6FxkHES4xMIfKroSsc5lpGwnj3Efjdp09I4TdZRet/Qg7X+YjO2pt3aolcNHjUsiCNpjhbu0UF+1vY8mDRhetJyk3tqBG7JL7mlcUsRY85GFE+V+eQwwapJcYGFCAeftiwfiDJAO42KBq6ur9sLCAr+5qqSDKf23l5eX3fgA6tH19fWfS0tLXz0sIff5t+hcYEUgSStRpfR/pbDX3sfxDj5/Thyk0tT99/Hl/S6aWBNI0kjkZPr4+PhlMouxdWdxcbGGlvcllop6xG4v9mHLfy8GpB4D+1FzPJ0xsQfEfInratfDrkom7CRO64pluLLC1MpIHrEukBhKfAkmfSn98/i4SUp/GJSHzPeK7vIxiROBRFdif0of3XmOD9dtpPQH3C+1PGJ1DOxHc0wsLS8vdzHevXTli4uL27iuHm9y0p66FdqSR5wKJDoSOU3Buf/imovkcbW0+ywW1sE25fU+TzyBqLqLl50RT2dKv6XqZVvpM9vyep8pHtGUaBUX8ojzLpzE4opFC1fyiFeBxLdEl/KId4HEl0TX8kgmAolriT7kkcwEElcSfckjmQoktiX6lEcyF0hsSfQtj+RCILGQT/Quj+RGIDGVmJU8kiuBRFcin6FA3tss5PXuLzllxH9r+IS0WU0yJHctMEY9A2Fq62eUqf731TOMDckYZwlVG0BQi9stUE3uWWFX3UbCtS6BQCAQCAQCgUAgEAgEvPMfrvf9aenorPgAAAAASUVORK5CYII=" alt="discount-icon">
+          <p class="h1 pb-3 my-0 ">比較優惠 把握每一個機會！</p>
+          <p class="h5 fw-normal mb-0 bg-image-discount">如果您發現多張卡片讓您心動，您可以新增它們至比較列表，輕鬆比較各個卡片，確保您選擇的卡片最符合您的需求。</p>
+        </div>
+        <!-- compare-content  -->
+        <img class="d-block ms-auto " src="/Card-Advisor-JS-Project/assets/img_discount_1-4869441e.png" alt="man">
+      </div>
+      <div class="container border border-4 border-cus-greyD4 rounded-4 p-5">
+        <div class=" row gx-5">
+          <div class="col-6 col-md-4 px-10">
+            <div class="bg-light px-10">
+              <p class="h4 text-center mb-4">滙豐銀行現金回饋御璽卡</p>
+              <img class="py-10 mb-4 img-fluid" src="/Card-Advisor-JS-Project/assets/滙豐銀行現金回饋玉璽卡-946bbc4d.png" alt="滙豐銀行現金回饋玉璽卡">
+              <div class="text-center py-10 mb-4">
+                <p class="display-5">1.22%</p>
+                <p class="designer-button-1-2-fs mt-1">一般消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="h2">無上限</p>
+                <p class="designer-button-1-2-fs mt-1">回饋上限</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+                  monetization_on
+                  </span>現金</button>
+                <p class="designer-button-1-2-fs mt-1">回饋方式</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">無上限</p>
+                <p class="display-5">2.22%</p>
+                <p class="designer-button-1-2-fs mt-1">海外消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">無上限</p>
+                <p class="display-5">1.22%</p>
+                <p class="designer-button-1-2-fs mt-1">網購消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">OPENPOINTS 回饋 最高</p>
+                <p class="display-5">10%</p>
+                <p class="designer-button-1-2-fs mt-1">行動支付回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">OPENPOINTS 回饋 最高</p>
+                <p class="h2">威秀影城電影票<span class="display-5"> 2 </span>張</p>
+                <p class="designer-button-1-2-fs mt-1">首刷禮</p>
+              </div>
+              <div class="py-10">
+                <p class="designer-body-1-2-fs fw-bold mb-1">年費</p>
+                <p class="designer-button-1-5-fs">首年免年費，次年起年費 2000 元。
+                  滿足以下條件免年費：</p>
+                <ul class="designer-button-1-5-fs ps-3">
+                  <li>使用非紙本帳單（電子帳單或行動帳單）終身免年費。</li>
+                  <li>前一年消費滿 8 萬或 12 次享次年免年費。</li>
+                </ul>  
+                <p class="designer-body-1-2-fs fw-bold mb-1">公告時間</p>
+                <p class="designer-button-1-5-fs">自 2023 年 7 月 1 日至 2023 年 12 月 31 日</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 px-10">
+            <div class="bg-light px-10">
+              <p class="h4 text-center mb-4">滙豐銀行現金回饋御璽卡</p>
+              <img class="py-10 mb-4 img-fluid" src="/Card-Advisor-JS-Project/assets/玉山U Bear卡-5467c504.png" alt="玉山U Bear卡">
+              <div class="text-center py-10 mb-4">
+                <p class="display-5">1.22%</p>
+                <p class="designer-button-1-2-fs mt-1">一般消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="h2">無上限</p>
+                <p class="designer-button-1-2-fs mt-1">回饋上限</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+                  monetization_on
+                  </span>現金</button>
+                <p class="designer-button-1-2-fs mt-1">回饋方式</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">無上限</p>
+                <p class="display-5">2.22%</p>
+                <p class="designer-button-1-2-fs mt-1">海外消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">無上限</p>
+                <p class="display-5">1.22%</p>
+                <p class="designer-button-1-2-fs mt-1">網購消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">OPENPOINTS 回饋 最高</p>
+                <p class="display-5">10%</p>
+                <p class="designer-button-1-2-fs mt-1">行動支付回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">OPENPOINTS 回饋 最高</p>
+                <p class="h2">威秀影城電影票<span class="display-5"> 2 </span>張</p>
+                <p class="designer-button-1-2-fs mt-1">首刷禮</p>
+              </div>
+              <div class="py-10">
+                <p class="designer-body-1-2-fs fw-bold mb-1">年費</p>
+                <p class="designer-button-1-5-fs">首年免年費，次年起年費 2000 元。
+                  滿足以下條件免年費：</p>
+                <ul class="designer-button-1-5-fs ps-3">
+                  <li>使用非紙本帳單（電子帳單或行動帳單）終身免年費。</li>
+                  <li>前一年消費滿 8 萬或 12 次享次年免年費。</li>
+                </ul>  
+                <p class="designer-body-1-2-fs fw-bold mb-1">公告時間</p>
+                <p class="designer-button-1-5-fs">自 2023 年 7 月 1 日至 2023 年 12 月 31 日</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 px-10">
+            <div class="bg-light px-10 sticky-top">
+              <div class=" py-11 bg-white">
+                <button class="d-block mx-auto text-center btn border-cus-grey9F rounded-circle" style="padding:28px;border:dashed;">
+                <span class="align-top material-symbols-outlined text-cus-grey9F" style="color:aqua">
+                  add
+                  </span>
+                </button>
+                <p class="text-center pt-4 designer-body-1-2-fs fw-bold">前往信用卡比較<span class="align-top material-symbols-outlined">
+                  chevron_right
+                  </span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <img  src="/Card-Advisor-JS-Project/assets/img_discount_2-e749e86e.png" alt="woman">
+        </div>
+        
+
+
+
+      </div>
+    <!-- footer -->
+      <footer></footer>
+
+
     <h1 class="index-title">我是首頁</h1>
 
     <div class="card" style="width: 18rem">
@@ -54,7 +252,7 @@
       </div>
     </div>
 
-    <footer class="footer">我是 footer</footer>
+    <footer class="text-center py-4 bg-cus-grey1D text-white designer-button-1-2-fs fw-normal">Copyright © cardadvisor.</footer>
     
   </body>
 </html>
