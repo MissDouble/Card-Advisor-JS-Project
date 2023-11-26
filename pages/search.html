@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/images/favicon.png" type="image/png">
+    <title>Card Advisor</title>
+  </head>
+  <body>
+    <!-- header -->
+    <%- include('./layout/header'); -%>
+    <!-- 首頁上方白色區域 -->
+    <div class="container">
+        <div>
+            <div class="hero">
+                <div class="heading">
+                    <img src="../assets/images/img_creditcard.png">
+                    <h1>以輕鬆又快速的方式尋找最佳信用卡</h1>
+                    <p>我們為您提供一個簡單而強大的工具，協助您找到當下最適消費的信用卡</p>
+                </div>
+                <div class="search-bar">
+                    <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                    <div><a href=""><img src="#">進階搜尋</a></div>
+                    <div>熱門：<a href="#">CUBE 卡</a>、<a href="#">小樹點</a>、<a href="">樹享券</a></div>
+                </div>
+            </div>
+            <div class="search-result">
+                
+            </div>
+
+
+        </div>
+    </div>
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="../main.js"></script>
+  </body>
