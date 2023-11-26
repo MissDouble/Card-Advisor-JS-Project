@@ -10,28 +10,39 @@
   <body>
     <!-- header -->
     <%- include('./layout/header'); -%>
-    <!-- 首頁上方白色區域 -->
-    <div class="container">
         <div>
             <div class="hero">
                 <div class="heading">
                     <img src="../assets/images/img_creditcard.png">
-                    <h1>以輕鬆又快速的方式尋找最佳信用卡</h1>
+                    <h1>進階搜尋</h1>
                     <p>我們為您提供一個簡單而強大的工具，協助您找到當下最適消費的信用卡</p>
                 </div>
                 <div class="search-bar">
                     <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
-                    <div><a href=""><img src="#">進階搜尋</a></div>
                     <div>熱門：<a href="#">CUBE 卡</a>、<a href="#">小樹點</a>、<a href="">樹享券</a></div>
+                    <div class="search-bar-flexwrap">
+                        <div>選擇消費</div>
+                        <input type="checkbox" id="general-payment"><label for="general-payment">一般消費</label>
+                        <input type="checkbox" id="oversea-payment"><label for="oversea-payment">海外消費</label>
+                        <input type="checkbox" id="onilne shopping"><label for="onilne shopping">網購</label>
+                        <input type="checkbox" id="motile-payment"><label for="motile-payment">行動支付</label>
+                        <input type="checkbox" id="gas"><label for="gas">加油</label>
+                        <input type="checkbox" id="department-store"><label for="department-store">百貨公司</label>
+                    </div>
+                    <div class="search-bar-flexwrap">
+                        <div>選擇銀行</div>
+                        <select name="" id="">
+                            <option value="">國泰世華</option>
+                            <option value="">台新銀行</option>
+                            <option value="">玉山銀行</option>
+                            <option value="">台北富邦</option>
+                            <option value="">中國信託</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="search-result">
-                
-            </div>
-
-
+            <div class="search-result"></div>
         </div>
-    </div>
     <%- include('./layout/footer'); -%>
     <script type="module" src="../main.js"></script>
   </body>

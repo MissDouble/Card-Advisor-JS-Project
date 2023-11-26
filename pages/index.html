@@ -11,7 +11,6 @@
     <!-- header -->
     <%- include('./layout/header'); -%>
     <!-- 首頁上方白色區域 -->
-    <div class="container">
     <div>
         <div class="hero">
             <div class="heading">
@@ -20,13 +19,16 @@
                 <p>我們為您提供一個簡單而強大的工具，協助您找到當下最適消費的信用卡</p>
             </div>
             <div class="search-bar">
-                <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
-                <div><a href=""><img src="#">進階搜尋</a></div>
+                <div class="search-bar-flexwrap">
+                  <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                  <div><a href=""><img src="#">進階搜尋</a></div>
+                </div>
                 <div>熱門：<a href="#">CUBE 卡</a>、<a href="#">小樹點</a>、<a href="">樹享券</a></div>
             </div>
         </div>
     </div>
     <div class="intro">
+      <div class="container">
         <div class="intro-block">
             <div class="intro-content intro-content-1">
                 <div class="intro-tag"><img src="../assets/images/icon/mystery_blue.png">強大搜尋</div>
@@ -45,13 +47,13 @@
             </div>
         </div>
       </div>
+      </div>
     <!-- 首頁中間灰色區域 -->
       <div></div>
     <!-- 比較信用卡 -->
       <div></div>
     <!-- footer -->
       <footer></footer>
-    </div>
 
 
     <h1 class="index-title">我是首頁</h1>
