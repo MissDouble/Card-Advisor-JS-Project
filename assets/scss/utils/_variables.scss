@@ -309,7 +309,7 @@ $dark:          $gray-900 !default;
 $cus-sky:       #9AD7FF;//*custom
 $cus-orange:    #F6BD2B;//*custom
 $cus-black:     #180000;//*custom
-$cus-gray1D:    #1D1D1D;//*custom
+$cus-grey1D:    #1D1D1D;//*custom
 $cus-grey33:    #333333;//*custom
 $cus-grey66:    #666666;//*custom
 $cus-grey9F:    #9F9F9F;//*custom
@@ -332,7 +332,7 @@ $theme-colors: (
   "cus-sky":    $cus-sky,//*custom
   "cus-orange": $cus-orange,//*custom
   "cus-black":  $cus-black,//*custom
-  "cus-gray1D": $cus-gray1D,//*custom
+  "cus-grey1D": $cus-grey1D,//*custom
   "cus-grey33": $cus-grey33,//*custom
   "cus-grey66": $cus-grey66,//*custom
   "cus-grey9F": $cus-grey9F,//*custom
@@ -395,11 +395,17 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * .25,//4
+  2: $spacer * .5,//8
+  3: $spacer,//16
+  4: $spacer * 1.5,//24
+  5: $spacer * 3,//48
+  6: $spacer * 2,//32 *custom
+  7: $spacer * 2.5,//40 *custom
+  8: $spacer * 3.5,//56 *custom
+  9: $spacer * 5,//80 *custom
+  10: $spacer * 0.75,//12 *custom
+  11: $spacer * 5.375,//86 *custom
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -440,7 +446,7 @@ $stretched-link-z-index:                  1 !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:   0;//*custom 1rem !default;
 
 
 // Grid breakpoints
@@ -516,7 +522,7 @@ $border-color-translucent:    rgba($black, .175) !default;
 $border-radius:               .375rem !default;
 $border-radius-sm:            .25rem !default;
 $border-radius-lg:            .5rem !default;
-$border-radius-xl:            1rem !default;
+$border-radius-xl:            1.5rem;//*custom 1rem !default;
 $border-radius-2xl:           2rem !default;
 $border-radius-pill:          50rem !default;
 // scss-docs-end border-radius-variables
@@ -587,7 +593,7 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
+$h1-font-size:                $font-size-base * 3; //*custom 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
@@ -607,10 +613,10 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      0;//*custom $spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
+$headings-font-weight:        700; //*custom 500 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 // scss-docs-end headings-variables
@@ -622,12 +628,14 @@ $display-font-sizes: (
   3: 4rem,
   4: 3.5rem,
   5: 3rem,
-  6: 2.5rem
+  6: 2.5rem,
+  7: 2,//*custom
+  8: 1.5rem,//*custom
 ) !default;
 
 $display-font-family: null !default;
 $display-font-style:  null !default;
-$display-font-weight: 300 !default;
+$display-font-weight: 500;//300 !default;
 $display-line-height: $headings-line-height !default;
 // scss-docs-end display-headings
 
