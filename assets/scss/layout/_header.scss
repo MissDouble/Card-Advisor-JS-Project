@@ -7,6 +7,7 @@
 
 header {
   background-color: white;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 header .container {
@@ -20,13 +21,53 @@ header .container {
   width: 14em;
 }
 
-header ul {
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+
+.menu {
   margin: 0;
   display: flex;
   justify-content: space-between;
   list-style: none;
+  gap: 2em;
+  font-weight: 700;
 }
 
-header ul li {
-  margin-inline: 2em;
+.menu li a {
+  color: $cus-grey66;
+  text-decoration: none;
 }
+
+.login-btn {
+  padding: 0.6em 1.5em;
+  font-size: 1rem;
+  text-align: center;
+  background-color: $primary;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: $secondary;
+}
+
+// header ul li {
+//   margin-inline: 2em;
+// }
+
+// header ul {
+//   margin: 0;
+//   display: flex;
+//   justify-content: space-between;
+//   list-style: none;
+// }
+
+// header ul li {
+//   margin-inline: 2em;
+// }
