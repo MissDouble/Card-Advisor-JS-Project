@@ -156,6 +156,106 @@ div h2 {
   font-weight: 700;
 }
 
+// below added by Xin
+.background{
+  width: 100%;
+  background-image: url("img_creditcard_bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-top: 3em;
+  padding-bottom: 19em;
+  background-color: #E9E9E9;
+
+}
+
+.title span {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  margin-right: 72px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 100px;
+  
+}
+
+button:hover{
+background-color: #0470FD;
+}
+
+.card-1{
+  height: 456px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  margin-left: 72px;
+  margin-right: 72px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.card-1 img{
+  transform-origin: center;
+  border-radius: 24px;
+  width: 100%;
+  height: auto;
+
+}
+
+.card-1 li{
+  float: left;
+  width: 368px;
+  height: 368px;
+  margin-left: 24px;
+  margin-right: 24px;
+  list-style: none;
+
+
+}
+
+.card-2{
+  height: 456px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  margin-left: 72px;
+  margin-right: 72px;
+  margin-bottom: 30px;
+  overflow: hidden;
+ 
+}
+
+.card-2 img{
+  transform-origin: center;
+  border-radius: 24px;
+  width: 100%;
+  height: auto; 
+}
+
+.card-2 li{
+  float: left;
+  width: 368px;
+  height: 368px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.btn a{
+  color: black;
+  font-size: 16px;
+  float: right;
+  padding-right: 80px;
+  margin-top: 50px;
+
+}
+.btn  a:hover,:active{
+  color: blue;
+}
 // below added by DoDo
 .designer-title-fs{
   font-size: 18px;
