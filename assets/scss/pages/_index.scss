@@ -23,6 +23,8 @@ body:lang(zh) {
 
 .hero {
   width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
   background-image: url("../images/img_banner.png");
   background-size: 100%;
   background-repeat: no-repeat;
