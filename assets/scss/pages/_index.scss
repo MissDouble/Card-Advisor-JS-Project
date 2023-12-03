@@ -159,69 +159,50 @@ div h2 {
 // below added by Xin
 .background{
   width: 100%;
-  background-image: url("img_creditcard_bg.png");
-  background-size: 100%;
+  background-image: url("/assets/images/img_creditcard_bg.png");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
-  padding-top: 3em;
-  padding-bottom: 19em;
+  background-position: center center;
+  padding-top: 80px;
+  padding-bottom: 120px;
   background-color: #E9E9E9;
+  
 
 }
 
+.title{
+  display: flex;
+  padding-top: 24px;
+ 
+}
+
+
 .title span {
-  background-color: blue;
+  font-weight: 700;
+  background-color: rgba(1, 38, 222, 1);
   color: white;
-  padding: 10px 15px;
-  margin-right: 72px;
-  border: none;
+  padding: 8px 24px 12px 12px;
   border-radius: 8px;
   margin-left: 100px;
   
 }
 
-button:hover{
-background-color: #0470FD;
-}
 
-.card-1{
-  height: 456px;
+.box-1{
+  height: 432px;
   background: white;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 24px;
   margin-left: 72px;
   margin-right: 72px;
-  margin-bottom: 50px;
-  overflow: hidden;
 }
 
-.card-1 img{
-  transform-origin: center;
-  border-radius: 24px;
-  width: 100%;
-  height: auto;
-
-}
-
-.card-1 li{
-  float: left;
-  width: 368px;
-  height: 368px;
-  margin-left: 24px;
-  margin-right: 24px;
-  list-style: none;
-
-
-}
-
-.card-2{
-  height: 456px;
+.box-2{
+  height: 432px;
   background: white;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 24px;
   margin-left: 72px;
   margin-right: 72px;
@@ -230,31 +211,77 @@ background-color: #0470FD;
  
 }
 
-.card-2 img{
-  transform-origin: center;
-  border-radius: 24px;
-  width: 100%;
-  height: auto; 
-}
-
-.card-2 li{
-  float: left;
+.card-1,.card-2{
+  text-align: center;
   width: 368px;
   height: 368px;
-  margin-left: 24px;
   margin-right: 24px;
+  margin-left: 24px;
+  padding-bottom: 24px;
+  font-size: 18px;
+  color: rgba(102, 102, 102, 1);
+  font-weight: 400;
+
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.btn{
+  display: flex;
+  width: 174px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-right: 48px;
+
 }
 
 .btn a{
+  font-weight: 700;
   color: black;
-  font-size: 16px;
-  float: right;
-  padding-right: 80px;
-  margin-top: 50px;
+  text-decoration:none;
+
 
 }
-.btn  a:hover,:active{
-  color: blue;
+.btn :hover,:active{
+  color: rgba(1, 38, 222, 1);
+  border-bottom: 1px solid rgba(1, 38, 222, 1);
+  padding-bottom: 4px;
+}
+
+@media (max-width:500px){
+  
+  .title span{
+    font-size: 16px;
+    margin-left: 36px;
+
+  }
+  .box-1,.box-2{
+    width: 351px;
+    height: 1045px;
+    margin-left: 12px;
+    margin-right: 12px;
+    flex-wrap: wrap;
+
+  }
+  .card-1,.card-2{
+    width: 303px;
+    height: 303px;
+    gap: 24px;
+
+  }
+  .btn{
+   margin-left: 100px;
+   margin-right: 100px;
+   margin-top: 24px;
+  
+  }
+  
 }
 // below added by DoDo
 .designer-title-fs{
