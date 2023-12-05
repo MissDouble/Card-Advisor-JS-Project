@@ -173,6 +173,8 @@ div h2 {
 .title{
   display: flex;
   padding-top: 24px;
+  position: relative;
+  top: 24px;
  
 }
 
@@ -207,7 +209,6 @@ div h2 {
   margin-left: 72px;
   margin-right: 72px;
   margin-bottom: 30px;
-  overflow: hidden;
  
 }
 
@@ -224,13 +225,13 @@ div h2 {
 
 }
 
-img{
+.card-1 img,.card-2 img{
   width: 100%;
   object-fit: cover;
 
 }
 
-.btn{
+.more-cards{
   display: flex;
   width: 174px;
   height: 44px;
@@ -241,14 +242,14 @@ img{
 
 }
 
-.btn a{
+.more-cards a{
   font-weight: 700;
   color: black;
   text-decoration:none;
 
 
 }
-.btn :hover,:active{
+.more-cards :hover,:active{
   color: rgba(1, 38, 222, 1);
   border-bottom: 1px solid rgba(1, 38, 222, 1);
   padding-bottom: 4px;
