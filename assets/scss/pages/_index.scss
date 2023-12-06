@@ -87,6 +87,10 @@ select {
   width: 60%;
 }
 
+.intro {
+  padding-bottom: 5em;
+}
+
 .intro-block {
   margin-top: 7em;
   display: grid;
@@ -155,6 +159,25 @@ div h2 {
   color: $primary;
   font-weight: 700;
 }
+
+@media (max-width: 1024px) {
+  .intro-block {
+    grid-template-columns: 1fr;
+    row-gap: 3em;
+  }
+  .intro-block-2 .intro-content-2{
+    grid-row: 1;
+  }
+
+  .intro-block-2 img{
+    grid-row: 2;
+  }
+
+  .intro-block img {
+    margin: 0 auto;
+  }
+}
+
 
 // below added by Xin
 .background{
