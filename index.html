@@ -10,8 +10,8 @@
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ8SURBVHgB5ZoxT9tAFMefk6jq0qqqKlVVhzpdmm5RpXZO+wla9oodNr4BC2IHZoTYgQ+AIDMsjIiBmAEhBiACCTGQGD/DCwk52+/u3tlG/KRIzjlOfv/4zrl7DsAzx4McqTU6rRB6vgfV4Ha/3gYB8gnQ6PheP1yPtppDrUFY8X7Dfj0AC9wHQPkw3IYQfMVe6xBuA6TLE1Yh3AXgyRPGIdwE0JMnjELIBzCTJ7RDyAawkye0QsgFkJEn2CFkAsjKE6wQ9gHcyBOZIewCuJUnUkOYB8hHnkgMYRYgX3lCGUI/QDHyxFgIvQDFyhMjISrsw8ohj+DUfJue8AJoyDe/v4LWr9cjbe/eVuJ2fAjhR04t3KhlvpQpj5JrSx8H8sHxLczMnUH3sh+3436kvXMDE9OncbsN1V7P70HWGND45pfnP8DkvzcjbSRJ8sTswgXMLnbBhodx0E4OoNnnz3e/jIkmgcHe/zwCC4Lw4GsdN9SfWJ4Bq+L+KvTAeABD+ZX1K/ZrNzavwZCM3wGLbx67z9bqJ2g20q80OLh//D02GcTKX+LHM2DZbVBoYuo0Fkw0iPb9+X8iJo8MAkj0eRJUhUjbl/W2abPROABWzKQGrErUlTwSB8ByHwgyLOxSHrkfxNEZGJ5fSOF/rkH3qi/a558yuAp53w47Jbnua1UlBoM49KKDPGAd5BDLulDJFiscxudCJVouclBP5kqyYOcgNhs1xPH9gYKLVhyyF/UFlg058KoSBRVuOfDLKgWUzjnkWRcSl0fyqsw5kUfyqI06k0dcV6edyiPmARDHN7E58GujKiK5hFnsXh7yiN0ZGCauVeLKrhqA0B85XgR3ksjwN0s0gfsAAAAASUVORK5CYII=" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Card Advisor</title>
-    <script type="module" crossorigin src="/Card-Advisor-JS-Project/assets/main-df6e15b9.js"></script>
-    <link rel="stylesheet" href="/Card-Advisor-JS-Project/assets/main-12c93753.css">
+    <script type="module" crossorigin src="/Card-Advisor-JS-Project/assets/main-d96f3f31.js"></script>
+    <link rel="stylesheet" href="/Card-Advisor-JS-Project/assets/main-6fb4978f.css">
   </head>
   <body>
     <!-- header -->
@@ -31,6 +31,11 @@
                 <li><a href="../pages/search.html">刷哪張好？</a></li>
                 <li><a href="../pages/compare-cards.html">信用卡比一比</a></li>
             </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <button class="login-btn">登入/註冊 &rsaquo;</button>
         </div>
     </div>
@@ -52,78 +57,85 @@
         </div>
     </div>
     <div class="intro">
-        <div class="intro-block">
-            <div class="intro-content intro-content-1">
-                <div class="intro-tag"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVtSURBVHgB7VldUhs5EO7WEKBqX7jB2oQ1vK05wZoTQE4QcwLICYATACeIfYK1TxDnBPG+BfPj4QTxy1YthlFvtzzYkmaGmbGdrU2Fr8pV9mjU6k9qdX+SAV7xip8bCAtifWdYGZM+AFK/E1IDCDb48UbcPOJPCEih0tSNgqAHX6shLBFzEwh2bpqa1Ht2uFGmH4/YU1q3o+utFiwBpQms7AwbEdFHdrwCiyEkhYe8Ij1YAMUJVIYb6g2ccJgcwxKBgKd6UD2DOVGMAMc5avqTv9VTWkdspU+AXViBHvzNMR9WR6aFScO66VNBgn0gOsgYoc+r8W6e/ZFPQJwn+pQSMiMCuoSxupg6XMAWb+ZTAnif0hrSGHcL24qRSwBrd18gOfNzz5hB9qT0abC5CyWgXmz8bXgOnvMEus0ztbdQOuS+9MCzjdjxWupq+/YcSiBzBUy20TxLFsR5GGw1YYlQtZsWgXJCild3r2h2ylwBkypdhDAOlpqBBHpis28/4/A6Kdo/dQVMkdLKIcCzUs0KG1ktHcG+qcRg4npWiTlDoca+CqD7lDWrkyw39MYrtAqpBHB7yBvMOBO/hC3O1YeQ4ngks1W8GoeK9FlaFVa1W85OeGJ51qOrzb08g0kC6bPhzr4UtVV9zgM2YQ4g0oV+UGdOymSbuErfXhw3BYk9EEDUcEeDrmNECK7RF8/5EcftJT97J4NyKkTzke/8jGep7ThGeMzOfhJb04dCBrHnOCciMQcJAlrjvjOYtlKdzJKXv0kcH2NVX789hkG145CV7/xMDzabQsYjUjfVXap1DG7vOs6wwoWyBNhMxfkZcPZ5fpnDxnWexZg4bkkHqR1c/L7Jx8npTMYQQfxgWa+rNT2Ne61Zitj+w2wfliDgVcd/JilOMpMdNpxxPsB1teUYk30xEXvmTCChkihMV9ULm4S8w6HUMD8eZ5MVYwPmIOB2imeX0+rR8yPJSnD19sLvyAQTMcsONv1nQsKuwtO8n9RBcxFIB+LMOOpSgivVHC1uQ5BGwDUcbzJCmGp2s+y1+4SiTGxC8yyhd0Bt3x854Uj60h4r05cUJAmg1+mXeE9IVbSXHaKWT0KPOT1OMo3YGEmG0mOwNy0E3IcoupjZ4XAcbBm7K+sJ1RtCDlb8B3zw+EzWRlZPuqFjrUIPcIhrPEiciYQEbt/WNapLkzI5hvndZupI8YlOQ2TrqdAmSBBVnDlFuIccpKwAOsKKl3pWF9hBziB7bDictktRYtXKUuCjSAs7DOTGIqjdHJjUukpD7zgaGr1jbVy/BiFQD3JQREqMpFA5GeLlk1UujCwXFerZzJUwKUiugHRwS7ronmP/nbi6HtqrkQsRaDLrcqbwUiZftZz47xY5NKUfaHaGTZ4NW06PeODdTIMcOirSB6S49BPJRnQutjjPf9aB6kAZOW2qvFsoixOQhu27oXdm7ZujZMlDdy5EX7E49MYKWQxWi3TPLGS8WX39XzdaaMnw9ZUZm7DwPVF2JeblFonsGObiI9kGlgFJq2zLP1NI7SgSOs94UUroR3UK3nlVBmSlOXS0fFlIzPN5IPVApFQIJbDIxdbkWlBx5S16xWJOcsAyYqpYU0EQNGHwa7uIyeJXixkkJlaoI9fnGAThk8hv63zwhqVIxNXcFMQSN9lFSZS83NWnvLmPYIkwMc/6C+0D/XMbBLkkyv8/IDVichNRgcXgXq/zrcQ8JOb+gyMudrIa9VL9pBprbKdmmjlILPwXk8lGBAds6A+OhwokL7b4xgJ7GuEv/t7J3fAlSSxO4HsgKWUM0kgUP1L+l/habZn9kcBj7k3d/wuyErU7kg/wLTb8kGASP67zr3jF98e/QWnTCEM1fdcAAAAASUVORK5CYII=">強大搜尋</div>
-                <h2>透過關鍵字輕鬆找到信用卡</h2>
-                <p class="intro-paragraph">只需填寫通路關鍵字，如「蝦皮」、「加油」、或「海外消費」，即可立即查看當下回饋最高的信用卡。不再猶豫，立刻發現最適合您消費習慣的信用卡，讓您輕鬆掌握消費優勢。
-                您將發現選擇信用卡的過程不再是煩惱，而是一個探索的過程，帶來更多選擇、更多優勢，並讓您充分享受每一筆消費。開始探索吧，發現信用卡的無限可能性！</p>
-            </div>
-            <img src="/Card-Advisor-JS-Project/assets/img_about_1-6a7738c2.png">
+        <div class="container">
+          <div class="intro-block intro-block-1">
+              <div class="intro-content intro-content-1">
+                  <div class="intro-tag"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVtSURBVHgB7VldUhs5EO7WEKBqX7jB2oQ1vK05wZoTQE4QcwLICYATACeIfYK1TxDnBPG+BfPj4QTxy1YthlFvtzzYkmaGmbGdrU2Fr8pV9mjU6k9qdX+SAV7xip8bCAtifWdYGZM+AFK/E1IDCDb48UbcPOJPCEih0tSNgqAHX6shLBFzEwh2bpqa1Ht2uFGmH4/YU1q3o+utFiwBpQms7AwbEdFHdrwCiyEkhYe8Ij1YAMUJVIYb6g2ccJgcwxKBgKd6UD2DOVGMAMc5avqTv9VTWkdspU+AXViBHvzNMR9WR6aFScO66VNBgn0gOsgYoc+r8W6e/ZFPQJwn+pQSMiMCuoSxupg6XMAWb+ZTAnif0hrSGHcL24qRSwBrd18gOfNzz5hB9qT0abC5CyWgXmz8bXgOnvMEus0ztbdQOuS+9MCzjdjxWupq+/YcSiBzBUy20TxLFsR5GGw1YYlQtZsWgXJCild3r2h2ylwBkypdhDAOlpqBBHpis28/4/A6Kdo/dQVMkdLKIcCzUs0KG1ktHcG+qcRg4npWiTlDoca+CqD7lDWrkyw39MYrtAqpBHB7yBvMOBO/hC3O1YeQ4ngks1W8GoeK9FlaFVa1W85OeGJ51qOrzb08g0kC6bPhzr4UtVV9zgM2YQ4g0oV+UGdOymSbuErfXhw3BYk9EEDUcEeDrmNECK7RF8/5EcftJT97J4NyKkTzke/8jGep7ThGeMzOfhJb04dCBrHnOCciMQcJAlrjvjOYtlKdzJKXv0kcH2NVX789hkG145CV7/xMDzabQsYjUjfVXap1DG7vOs6wwoWyBNhMxfkZcPZ5fpnDxnWexZg4bkkHqR1c/L7Jx8npTMYQQfxgWa+rNT2Ne61Zitj+w2wfliDgVcd/JilOMpMdNpxxPsB1teUYk30xEXvmTCChkihMV9ULm4S8w6HUMD8eZ5MVYwPmIOB2imeX0+rR8yPJSnD19sLvyAQTMcsONv1nQsKuwtO8n9RBcxFIB+LMOOpSgivVHC1uQ5BGwDUcbzJCmGp2s+y1+4SiTGxC8yyhd0Bt3x854Uj60h4r05cUJAmg1+mXeE9IVbSXHaKWT0KPOT1OMo3YGEmG0mOwNy0E3IcoupjZ4XAcbBm7K+sJ1RtCDlb8B3zw+EzWRlZPuqFjrUIPcIhrPEiciYQEbt/WNapLkzI5hvndZupI8YlOQ2TrqdAmSBBVnDlFuIccpKwAOsKKl3pWF9hBziB7bDictktRYtXKUuCjSAs7DOTGIqjdHJjUukpD7zgaGr1jbVy/BiFQD3JQREqMpFA5GeLlk1UujCwXFerZzJUwKUiugHRwS7ronmP/nbi6HtqrkQsRaDLrcqbwUiZftZz47xY5NKUfaHaGTZ4NW06PeODdTIMcOirSB6S49BPJRnQutjjPf9aB6kAZOW2qvFsoixOQhu27oXdm7ZujZMlDdy5EX7E49MYKWQxWi3TPLGS8WX39XzdaaMnw9ZUZm7DwPVF2JeblFonsGObiI9kGlgFJq2zLP1NI7SgSOs94UUroR3UK3nlVBmSlOXS0fFlIzPN5IPVApFQIJbDIxdbkWlBx5S16xWJOcsAyYqpYU0EQNGHwa7uIyeJXixkkJlaoI9fnGAThk8hv63zwhqVIxNXcFMQSN9lFSZS83NWnvLmPYIkwMc/6C+0D/XMbBLkkyv8/IDVichNRgcXgXq/zrcQ8JOb+gyMudrIa9VL9pBprbKdmmjlILPwXk8lGBAds6A+OhwokL7b4xgJ7GuEv/t7J3fAlSSxO4HsgKWUM0kgUP1L+l/habZn9kcBj7k3d/wuyErU7kg/wLTb8kGASP67zr3jF98e/QWnTCEM1fdcAAAAASUVORK5CYII=">強大搜尋</div>
+                  <h2>透過關鍵字輕鬆找到信用卡</h2>
+                  <p class="intro-paragraph">只需填寫通路關鍵字，如「蝦皮」、「加油」、或「海外消費」，即可立即查看當下回饋最高的信用卡。不再猶豫，立刻發現最適合您消費習慣的信用卡，讓您輕鬆掌握消費優勢。
+                  您將發現選擇信用卡的過程不再是煩惱，而是一個探索的過程，帶來更多選擇、更多優勢，並讓您充分享受每一筆消費。開始探索吧，發現信用卡的無限可能性！</p>
+              </div>
+              <img src="/Card-Advisor-JS-Project/assets/img_about_1-6a7738c2.png">
+          </div>
+          <div class="intro-block intro-block-2">
+              <img src="/Card-Advisor-JS-Project/assets/img_about_2-4ae18657.png">
+              <div class="intro-content intro-content-2">
+                  <div class="intro-tag"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAP/SURBVHgB7VjdTRtBEJ5ZG8hb6CBnIgxSHuJUELsCoAKcCkgqMFQAqcCkgkAFOBVAHiIFCzjTgR9JkHcyc+bQ7d6dd9c2IEX+JFu3d/vzze7M7MwALLDAAgv8n3gXN3Dj5gyeGFWYN6J4VS1Bh+7pMzwD5ipAdTNujoi6RBDBM0HBnKA2bvdGms7gGckLZj8BUZllfUg0asMLYDYBmDwu0xkBNuCFML0KPZDnpxcjL5hOgHLyA/4N7b7whJhKAFzRXSggTwpbgHhhLLCsS92pqscdVb/uwmYcwZQIFkAWBcJt6/WY/O/aAEn/yH5g+9iD+pXdHyr1210C2ufvbRTvxS4YpgAG9ead4sVi6+0j+aQ1Vi/pY6oO0gkvlgjHpLf4r2lPT1BpQ//NNwhAkAAcGsSWnx8y+Q+P5FPU420E+g5TgJZ4vl+1C9/+3io0Vh3zkiKkgxx5Qb92QohfYArgPQseYPh+ArDqMNm2sRDgMVy+PSodc1k74tOpccdBaR+EHhF9td5GcjGCJ7xUqLJ51dZadbPvEnJFu18EMVCChtI6AlSvNcJPXvmCx/fks1q/PuIT27Pmb6XfZxbA1n3Zfd2vfYI5Aus355B1zXI6l2st1zi3Cq3HDVv3tYIDmDN4x02bES/lYQtOAZSy3B3vjLfqhEDUBbFnrL2i265hTgGI9Mdsm93jKTwR7EuQj+W9a4yHF8Io29Ko/H10Eiqw+/WEVqqXbfNN7QwUfcLpyGjdgZcAQlxChYdnYKP3sZvBxLWL1gE3TEMa1IauAVnyAnn2Oom8bc1uxKGwyafwFiJ0PY8+5o5PCH3LyKdwCpF3m+7TdnVgt2NPEhVOVEx+YIcSk4SovipMkCbCKQASGK6Nw4FmbpIS8hIOcIjQKhRi4zqX6OiRNvMGhFtwwOMEzAwrSVCykECvhHxilPwrFIKwY6sjj9ky2hpPAGYUQP+BY+vVajZ74hPplJJPkQph6vQqj22nDQkYczWlCt/6DrhPQNymdcVzVtZNDc4uqfDOFucIIoQV7/DY3eSB59KkzI1AOPUJWbzcKGEueIs4TkkXNA3vHsqP/S73LUpIcC01lyxVcR884J1SqvrNMQHsmoNx39Z/6q9NnJPDZnLNERKu++fEkqyv0Lmr9jkpEUmKv5pcJfe8DU2A/03MtsDHugOOy4Xt47Awjud3UrmGyRiGkBeEhRJcLeCqge1NbDS4rHJeTT0VE5dnj9MbJnMH5hphdaEUUh+iuZbSB0x+J6SckmK6YO7Br7P0QUWoIojB0t+wWpA5flZwzoxK3CBtB42TpB2TO6MHM2B2AVKMw4Imx05cNiR5ll9qzEMJCpGwl5RU5Hb3yCsWWGABN/4BqHvEqT6b5OAAAAAASUVORK5CYII=">最新資訊</div>
+                  <h2>一覽無遺各家銀行信用卡優惠</h2>
+                  <p>瀏覽各家信用卡的優惠、優惠條件以及公告時間，以確保您不會錯過任何優惠。我們將最新的資訊一一呈現，以便您隨時了解信用卡世界的最新動向。</p>
+              </div>
+          </div>
         </div>
-        <div class="intro-block">
-            <img src="/Card-Advisor-JS-Project/assets/img_about_2-4ae18657.png">
-            <div class="intro-content intro-content-2">
-                <div class="intro-tag"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAP/SURBVHgB7VjdTRtBEJ5ZG8hb6CBnIgxSHuJUELsCoAKcCkgqMFQAqcCkgkAFOBVAHiIFCzjTgR9JkHcyc+bQ7d6dd9c2IEX+JFu3d/vzze7M7MwALLDAAgv8n3gXN3Dj5gyeGFWYN6J4VS1Bh+7pMzwD5ipAdTNujoi6RBDBM0HBnKA2bvdGms7gGckLZj8BUZllfUg0asMLYDYBmDwu0xkBNuCFML0KPZDnpxcjL5hOgHLyA/4N7b7whJhKAFzRXSggTwpbgHhhLLCsS92pqscdVb/uwmYcwZQIFkAWBcJt6/WY/O/aAEn/yH5g+9iD+pXdHyr1210C2ufvbRTvxS4YpgAG9ead4sVi6+0j+aQ1Vi/pY6oO0gkvlgjHpLf4r2lPT1BpQ//NNwhAkAAcGsSWnx8y+Q+P5FPU420E+g5TgJZ4vl+1C9/+3io0Vh3zkiKkgxx5Qb92QohfYArgPQseYPh+ArDqMNm2sRDgMVy+PSodc1k74tOpccdBaR+EHhF9td5GcjGCJ7xUqLJ51dZadbPvEnJFu18EMVCChtI6AlSvNcJPXvmCx/fks1q/PuIT27Pmb6XfZxbA1n3Zfd2vfYI5Aus355B1zXI6l2st1zi3Cq3HDVv3tYIDmDN4x02bES/lYQtOAZSy3B3vjLfqhEDUBbFnrL2i265hTgGI9Mdsm93jKTwR7EuQj+W9a4yHF8Io29Ko/H10Eiqw+/WEVqqXbfNN7QwUfcLpyGjdgZcAQlxChYdnYKP3sZvBxLWL1gE3TEMa1IauAVnyAnn2Oom8bc1uxKGwyafwFiJ0PY8+5o5PCH3LyKdwCpF3m+7TdnVgt2NPEhVOVEx+YIcSk4SovipMkCbCKQASGK6Nw4FmbpIS8hIOcIjQKhRi4zqX6OiRNvMGhFtwwOMEzAwrSVCykECvhHxilPwrFIKwY6sjj9ky2hpPAGYUQP+BY+vVajZ74hPplJJPkQph6vQqj22nDQkYczWlCt/6DrhPQNymdcVzVtZNDc4uqfDOFucIIoQV7/DY3eSB59KkzI1AOPUJWbzcKGEueIs4TkkXNA3vHsqP/S73LUpIcC01lyxVcR884J1SqvrNMQHsmoNx39Z/6q9NnJPDZnLNERKu++fEkqyv0Lmr9jkpEUmKv5pcJfe8DU2A/03MtsDHugOOy4Xt47Awjud3UrmGyRiGkBeEhRJcLeCqge1NbDS4rHJeTT0VE5dnj9MbJnMH5hphdaEUUh+iuZbSB0x+J6SckmK6YO7Br7P0QUWoIojB0t+wWpA5flZwzoxK3CBtB42TpB2TO6MHM2B2AVKMw4Imx05cNiR5ll9qzEMJCpGwl5RU5Hb3yCsWWGABN/4BqHvEqT6b5OAAAAAASUVORK5CYII=">最新資訊</div>
-                <h2>一覽無遺各家銀行信用卡優惠</h2>
-                <p>瀏覽各家信用卡的優惠、優惠條件以及公告時間，以確保您不會錯過任何優惠。我們將最新的資訊一一呈現，以便您隨時了解信用卡世界的最新動向。</p>
-            </div>
-        </div>
-      </div>
       </div>
     <!-- 首頁中間灰色區域 -->
     <div class="background">
-      <div class="title"><span>> 熱門信用卡</span></div> 
-       <div class="card-1">
-       <ui>
-           <li>
-             <img src="星展飛行世界商務卡.png">
-             <span>滙豐銀行現金回饋御璽卡</span>
-           </li>
-           <li>
-             <img src="國泰世華Cube卡.png">
-             <span>國泰世華 Cube 卡</span> 
-           </li>
-           <li>
-             <img src="聯邦LinePay卡.png">
-             <span>聯邦 LinePay 卡</span>
-           </li>
-       </ui>
-       </div>    
+      <div class="title"><span>＞熱門信用卡</span></div>
+        <div class="box-1">
+          <div class="card-1">
+            <img src="/Card-Advisor-JS-Project/assets/img_cc_01-1d4dbe46.png" alt="滙豐銀行現金回饋御璽卡">
+            <span>滙豐銀行現金回饋御璽卡</span>
+          </div>
+          <div class="card-1">
+            <img src="/Card-Advisor-JS-Project/assets/img_cc_02-4c0ef39a.png" alt="國泰世華 Cube 卡">
+            <span>國泰世華 Cube 卡</span> 
+          </div>
+          <div class="card-1">
+            <img src="/Card-Advisor-JS-Project/assets/img_cc_03-80c306be.png" alt="聯邦 LinePay 卡">
+            <span>聯邦 LinePay 卡</span>
+          </div>
+        </div>
 
-      <div class="title"><span>> 一般消費高回饋</span></div>
-       <div class="card-2">
-       <ul>
-           <li>
-             <img src="富邦 J 卡.png">
-             <span>富邦 J 卡</span>
-           </li>
-           <li>
-             <img src="富邦momo卡.png">
-             <span>富邦 momo 卡</span>
-           </li>
-           <li>
-             <img src="台新Flygo卡.png">
-             <span>台新 Flygo 卡</span>
-           </li>
-       </ul>
-       </div>
-       <div class="btn"><a href="#">瀏覽更多信用卡 ></a></div> 
-   </div>
+
+       <div class="title"><span>＞一般消費高回饋</span></div>
+       <div class="box-2">
+        <div class="card-2">
+          <img src="/Card-Advisor-JS-Project/assets/img_cc_04-bd128b27.png" alt="富邦 J 卡">
+          <span>富邦 J 卡</span>
+        </div>
+        <div class="card-2">
+        <img src="/Card-Advisor-JS-Project/assets/img_cc_05-e74f0709.png" alt="富邦 momo 卡">
+          <span>富邦 momo 卡</span>
+        </div>
+        <div class="card-2">
+          <img src="/Card-Advisor-JS-Project/assets/img_cc_06-93b7d3c3.png" alt="台新 Flygo 卡">
+          <span>台新 Flygo 卡</span>
+        </div>
+      </div>
+
+        <div class="more-cards"><a href="#">瀏覽更多信用卡＞</a></div> 
+    </div>
+    
     <!-- 比較信用卡 -->
       <div class="container">
         <!-- compare-title  -->
-        <div class="py-9 text-center">
+        <div class="position-relative py-9 text-center col-8 mx-auto" style="z-index:1;">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAU3SURBVHgB7Zu7UiM5FIaPgaK4JJ43ME+wprikNtlONGy40XoSbsmYbDPgCcYkXAM8TzDebLM1GQGwnjfwPMH2JhTFdf/fpaZ6XdhjqSV1T42+KpVFu9sNnyUd6bQQCQQCgUAgEAgEAoFA4MeiIBlSr9eLd3d3pfv7+/LY2NhPz8/PVZQS38PPrUKhsHd0dNSVHONNYCwLpTo+Pk5ZZRwuf+OyaGJiYuXg4KAjOcWZwK2trbJqWZURZQ0igvD64eHhJ8kh1gRubGyw+71Dtfz09FRG9yuKRSCxlkeJqQVCXAnizjh+iWPyKHFMUoLW9pcPeeTx8bG5ubn5m+SIVALX1tZW8VISj+RNYiqBvlpeP3mSmEog526SEXmR+F22wJg8SDQWyGmL5ICsJRoL5FxPckKWEo0FYqJcEfdEo56YlURjgfGi3zb4YjoITiszMzNvTk5O3uA+8zg80uQ5C4lGK5FarVacnJz8R+zTgrRfXnsDY24Nw8aZjIDPFYtRC5yamrI+/qHlddHytge9j7RWU3LYEo0EOgog7WTub319/QPKGdfa8TEIbsqI+JJoJNBFAMFY9zWuq8xOA6WGUk+c1hUNfEg0EugqgMTc3t522KVZZ1CJj6MFaqfIXEvUFsgAIubJ0YEkW3Wz2Yymp6fnIWxOjX09mKAVA1xK1I7C7F5MYYkDhkVPjoXqviUxxEV01m6BLlcgbClIkdX7j9uQF3++7Zao3QIRGT9jDFwVt3TRpduqXhqStIhUKYkGNluidgt0HUAUJRWBa33yIiV2m6sVrlRQ5tRqJZNln3YLRBfjCsTqA6NhUBgEnUNYGxP4TqPRiAb8Xn+LZnCz0RInJH9wCnOO0hom7BVMpziSRqK2QM7LLCdS2S1bCBLns7OzLQ1hPdSs4IMYBpi0Ek2mMYyI7C7G3Vh1yz9Q2qenp1q7Dnj/h4eHVXS/Cn6PqqXnz8Y7IIyyMSnngnsY+HdHPZlbQm5ubiiqoqJ/SdwQYZyd192LYzQG4iZtSHw/anopCfJ8jW+do76gCqRVKY/HIE8cU+QGAbyu6FxkHES4xMIfKroSsc5lpGwnj3Efjdp09I4TdZRet/Qg7X+YjO2pt3aolcNHjUsiCNpjhbu0UF+1vY8mDRhetJyk3tqBG7JL7mlcUsRY85GFE+V+eQwwapJcYGFCAeftiwfiDJAO42KBq6ur9sLCAr+5qqSDKf23l5eX3fgA6tH19fWfS0tLXz0sIff5t+hcYEUgSStRpfR/pbDX3sfxDj5/Thyk0tT99/Hl/S6aWBNI0kjkZPr4+PhlMouxdWdxcbGGlvcllop6xG4v9mHLfy8GpB4D+1FzPJ0xsQfEfInratfDrkom7CRO64pluLLC1MpIHrEukBhKfAkmfSn98/i4SUp/GJSHzPeK7vIxiROBRFdif0of3XmOD9dtpPQH3C+1PGJ1DOxHc0wsLS8vdzHevXTli4uL27iuHm9y0p66FdqSR5wKJDoSOU3Buf/imovkcbW0+ywW1sE25fU+TzyBqLqLl50RT2dKv6XqZVvpM9vyep8pHtGUaBUX8ojzLpzE4opFC1fyiFeBxLdEl/KId4HEl0TX8kgmAolriT7kkcwEElcSfckjmQoktiX6lEcyF0hsSfQtj+RCILGQT/Quj+RGIDGVmJU8kiuBRFcin6FA3tss5PXuLzllxH9r+IS0WU0yJHctMEY9A2Fq62eUqf731TOMDckYZwlVG0BQi9stUE3uWWFX3UbCtS6BQCAQCAQCgUAgEAgEvPMfrvf9aenorPgAAAAASUVORK5CYII=" alt="discount-icon">
           <p class="h1 pb-3 my-0 ">比較優惠 把握每一個機會！</p>
           <p class="h5 fw-normal mb-0 bg-image-discount">如果您發現多張卡片讓您心動，您可以新增它們至比較列表，輕鬆比較各個卡片，確保您選擇的卡片最符合您的需求。</p>
         </div>
         <!-- compare-content  -->
-        <img class="d-block ms-auto " src="/Card-Advisor-JS-Project/assets/img_discount_1-4869441e.png" alt="man">
+        
+        <!-- <img class="d-block ms-auto bg-image-discount" src="" alt="man"> -->
       </div>
-      <div class="container border border-4 border-cus-greyD4 rounded-4 p-5">
-        <div class=" row gx-5">
-          <div class="col-6 col-md-4 px-10">
+      <div class="container">
+        <img class="position-relative d-block ms-auto cus-position-1" src="/Card-Advisor-JS-Project/assets/img_discount_1-4869441e.png" alt="man">
+      </div>
+      <div class="title2 "><span class="bg-cus-greyD4 designer-title-fs" style="color:black"><span class="material-symbols-outlined align-top">
+        chevron_right
+        </span>信用卡比一比</span></div>
+      <div class="container border border-4 border-cus-greyD4 rounded-4 p-5 mb-9">
+        <div class="row gx-5 ">
+          <div class="col-6 col-md-4 px-10 card_container_1">
             <div class="bg-light px-10">
               <p class="h4 text-center mb-4">滙豐銀行現金回饋御璽卡</p>
               <img class="py-10 mb-4 img-fluid" src="/Card-Advisor-JS-Project/assets/滙豐銀行現金回饋玉璽卡-946bbc4d.png" alt="滙豐銀行現金回饋玉璽卡">
@@ -174,7 +186,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 px-10">
+          <div class="col-6 col-md-4 px-10 card_container_2">
             <div class="bg-light px-10">
               <p class="h4 text-center mb-4">玉山 U Bear 信用卡</p>
               <img class="py-10 mb-4 img-fluid" src="/Card-Advisor-JS-Project/assets/玉山U Bear卡-5467c504.png" alt="玉山U Bear卡">
@@ -241,14 +253,16 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-end">
-          <img  src="/Card-Advisor-JS-Project/assets/img_discount_2-e749e86e.png" alt="woman">
-        </div>
-        
-
-
-
       </div>
+      <div class="container d-flex justify-content-end mb-9">
+        <img  class="cus-position-2" src="/Card-Advisor-JS-Project/assets/img_discount_2-e749e86e.png" alt="woman">
+      </div>
+
+
+
+
+
+
     <!-- <h1 class="index-title">我是首頁</h1>
 
     <div class="card" style="width: 18rem">
@@ -290,7 +304,7 @@
       </div>
     </div> -->
 
-    <footer class="text-center py-4 bg-cus-grey1D text-white designer-button-1-2-fs fw-normal">Copyright © cardadvisor.</footer>
+    <footer class="text-center py-4 bg-cus-grey1D text-white designer-button-1-2-fs fw-normal">Copyright © cardadvisor.</footer>    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
   </body>
 </html>
