@@ -93,17 +93,24 @@
     <!-- 比較信用卡 -->
       <div class="container">
         <!-- compare-title  -->
-        <div class="py-9 text-center">
+        <div class="position-relative py-9 text-center col-8 mx-auto" style="z-index:1;">
           <img src="../assets/images/img_discount.png" alt="discount-icon">
           <p class="h1 pb-3 my-0 ">比較優惠 把握每一個機會！</p>
           <p class="h5 fw-normal mb-0 bg-image-discount">如果您發現多張卡片讓您心動，您可以新增它們至比較列表，輕鬆比較各個卡片，確保您選擇的卡片最符合您的需求。</p>
         </div>
         <!-- compare-content  -->
-        <img class="d-block ms-auto " src="../assets/images/img_discount_1.png" alt="man">
+        
+        <!-- <img class="d-block ms-auto bg-image-discount" src="" alt="man"> -->
       </div>
-      <div class="container border border-4 border-cus-greyD4 rounded-4 p-5">
-        <div class=" row gx-5">
-          <div class="col-6 col-md-4 px-10">
+      <div class="container">
+        <img class="position-relative d-block ms-auto cus-position-1" src="../assets/images/img_discount_1.png" alt="man">
+      </div>
+      <div class="title2 "><span class="bg-cus-greyD4 designer-title-fs" style="color:black"><span class="material-symbols-outlined align-top">
+        chevron_right
+        </span>信用卡比一比</span></div>
+      <div class="container border border-4 border-cus-greyD4 rounded-4 p-5 mb-9">
+        <div class="row gx-5 ">
+          <div class="col-6 col-md-4 px-10 card_container_1">
             <div class="bg-light px-10">
               <p class="h4 text-center mb-4">滙豐銀行現金回饋御璽卡</p>
               <img class="py-10 mb-4 img-fluid" src="../assets/images/img_cards/滙豐銀行現金回饋玉璽卡.png" alt="滙豐銀行現金回饋玉璽卡">
@@ -154,7 +161,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 px-10">
+          <div class="col-6 col-md-4 px-10 card_container_2">
             <div class="bg-light px-10">
               <p class="h4 text-center mb-4">玉山 U Bear 信用卡</p>
               <img class="py-10 mb-4 img-fluid" src="../assets/images/img_cards/玉山U Bear卡.png" alt="玉山U Bear卡">
@@ -221,14 +228,16 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-end">
-          <img  src="../assets/images/img_discount_2.png" alt="woman">
-        </div>
-        
-
-
-
       </div>
+      <div class="container d-flex justify-content-end mb-9">
+        <img  class="cus-position-2" src="../assets/images/img_discount_2.png" alt="woman">
+      </div>
+
+
+
+
+
+
     <!-- <h1 class="index-title">我是首頁</h1>
 
     <div class="card" style="width: 18rem">
@@ -271,7 +280,7 @@
     </div> -->
 
     <%- include('./layout/footer'); -%>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
   </body>
 </html>

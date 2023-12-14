@@ -272,7 +272,13 @@ div h2 {
 
 
 }
-.more-cards :hover,:active{
+// .more-cards :hover,:active{
+//   color: rgba(1, 38, 222, 1);
+//   border-bottom: 1px solid rgba(1, 38, 222, 1);
+//   padding-bottom: 4px;
+// }
+
+.more-cards :hover,.more-cards :active{
   color: rgba(1, 38, 222, 1);
   border-bottom: 1px solid rgba(1, 38, 222, 1);
   padding-bottom: 4px;
@@ -346,5 +352,45 @@ div h2 {
   letter-spacing: 0.24px;
 }
 .bg-image-discount{
-  background-image: url(img_discount_1.png);
+  background-image: url(../../images/img_discount_1.png);
+}
+.cus-position-1{
+  margin-top:-220px;
+  @media (max-width:1000px) {
+    margin-top:-150px;
+  }
+}
+.cus-position-2{
+  margin-right:-50px;
+  margin-top: -366px;
+  @media (max-width:1000px) {
+    //margin-bottom:-50px;
+  }
+}
+
+.cus-position-3{
+  margin-top:-120px;
+  @media (max-width:1000px) {
+    margin-top:-150px;
+  }
+}
+
+
+
+.title2{
+  display: flex;
+  padding-top: 24px;
+  position: relative;
+  top: 24px;
+ 
+}
+
+.title2>span {
+  font-weight: 700;
+  //background-color: rgba(1, 38, 222, 1);
+  //color: white;
+  padding: 8px 24px 12px 12px;
+  border-radius: 8px;
+  margin-left: 100px;
+  
 }
