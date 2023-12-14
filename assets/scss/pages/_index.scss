@@ -87,6 +87,10 @@ select {
   width: 60%;
 }
 
+.intro {
+  padding-bottom: 5em;
+}
+
 .intro-block {
   margin-top: 7em;
   display: grid;
@@ -156,105 +160,158 @@ div h2 {
   font-weight: 700;
 }
 
+@media (max-width: 1024px) {
+  .intro-block {
+    grid-template-columns: 1fr;
+    row-gap: 3em;
+  }
+  .intro-block-2 .intro-content-2{
+    grid-row: 1;
+  }
+
+  .intro-block-2 img{
+    grid-row: 2;
+  }
+
+  .intro-block img {
+    margin: 0 auto;
+  }
+}
+
+
 // below added by Xin
 .background{
   width: 100%;
-  background-image: url("img_creditcard_bg.png");
-  background-size: 100%;
+  background-image: url("/assets/images/img_creditcard_bg.png");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
-  padding-top: 3em;
-  padding-bottom: 19em;
+  background-position: center center;
+  padding-top: 80px;
+  padding-bottom: 120px;
   background-color: #E9E9E9;
+  
 
 }
 
+.title{
+  display: flex;
+  padding-top: 24px;
+  position: relative;
+  top: 24px;
+ 
+}
+
+
 .title span {
-  background-color: blue;
+  font-weight: 700;
+  background-color: rgba(1, 38, 222, 1);
   color: white;
-  padding: 10px 15px;
-  margin-right: 72px;
-  border: none;
+  padding: 8px 24px 12px 12px;
   border-radius: 8px;
   margin-left: 100px;
   
 }
 
-button:hover{
-background-color: #0470FD;
-}
 
-.card-1{
-  height: 456px;
+.box-1{
+  height: 432px;
   background: white;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 24px;
   margin-left: 72px;
   margin-right: 72px;
-  margin-bottom: 50px;
-  overflow: hidden;
 }
 
-.card-1 img{
-  transform-origin: center;
-  border-radius: 24px;
-  width: 100%;
-  height: auto;
-
-}
-
-.card-1 li{
-  float: left;
-  width: 368px;
-  height: 368px;
-  margin-left: 24px;
-  margin-right: 24px;
-  list-style: none;
-
-
-}
-
-.card-2{
-  height: 456px;
+.box-2{
+  height: 432px;
   background: white;
   display: flex;
   justify-content: center;
-  align-items: center;
   border-radius: 24px;
   margin-left: 72px;
   margin-right: 72px;
   margin-bottom: 30px;
-  overflow: hidden;
  
 }
 
-.card-2 img{
-  transform-origin: center;
-  border-radius: 24px;
-  width: 100%;
-  height: auto; 
-}
-
-.card-2 li{
-  float: left;
+.card-1,.card-2{
+  text-align: center;
   width: 368px;
   height: 368px;
-  margin-left: 24px;
   margin-right: 24px;
+  margin-left: 24px;
+  padding-bottom: 24px;
+  font-size: 18px;
+  color: rgba(102, 102, 102, 1);
+  font-weight: 400;
+
 }
 
-.btn a{
-  color: black;
-  font-size: 16px;
+.card-1 img,.card-2 img{
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.more-cards{
+  display: flex;
+  width: 174px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
   float: right;
-  padding-right: 80px;
-  margin-top: 50px;
+  margin-right: 48px;
 
 }
-.btn  a:hover,:active{
-  color: blue;
+
+.more-cards a{
+  font-weight: 700;
+  color: black;
+  text-decoration:none;
+
+
+}
+// .more-cards :hover,:active{
+//   color: rgba(1, 38, 222, 1);
+//   border-bottom: 1px solid rgba(1, 38, 222, 1);
+//   padding-bottom: 4px;
+// }
+
+.more-cards :hover,.more-cards :active{
+  color: rgba(1, 38, 222, 1);
+  border-bottom: 1px solid rgba(1, 38, 222, 1);
+  padding-bottom: 4px;
+}
+
+@media (max-width:500px){
+  
+  .title span{
+    font-size: 16px;
+    margin-left: 36px;
+
+  }
+  .box-1,.box-2{
+    width: 351px;
+    height: 1045px;
+    margin-left: 12px;
+    margin-right: 12px;
+    flex-wrap: wrap;
+
+  }
+  .card-1,.card-2{
+    width: 303px;
+    height: 303px;
+    gap: 24px;
+
+  }
+  .btn{
+   margin-left: 100px;
+   margin-right: 100px;
+   margin-top: 24px;
+  
+  }
+  
 }
 // below added by DoDo
 .designer-title-fs{
@@ -295,5 +352,45 @@ background-color: #0470FD;
   letter-spacing: 0.24px;
 }
 .bg-image-discount{
-  background-image: url(img_discount_1.png);
+  background-image: url(../../images/img_discount_1.png);
+}
+.cus-position-1{
+  margin-top:-220px;
+  @media (max-width:1000px) {
+    margin-top:-150px;
+  }
+}
+.cus-position-2{
+  margin-right:-50px;
+  margin-top: -366px;
+  @media (max-width:1000px) {
+    //margin-bottom:-50px;
+  }
+}
+
+.cus-position-3{
+  margin-top:-120px;
+  @media (max-width:1000px) {
+    margin-top:-150px;
+  }
+}
+
+
+
+.title2{
+  display: flex;
+  padding-top: 24px;
+  position: relative;
+  top: 24px;
+ 
+}
+
+.title2>span {
+  font-weight: 700;
+  //background-color: rgba(1, 38, 222, 1);
+  //color: white;
+  padding: 8px 24px 12px 12px;
+  border-radius: 8px;
+  margin-left: 100px;
+  
 }

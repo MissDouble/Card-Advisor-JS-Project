@@ -56,3 +56,9 @@ header .container {
 .login-btn:hover {
   background-color: $secondary;
 }
+
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+}
