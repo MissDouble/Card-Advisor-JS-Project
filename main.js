@@ -4,14 +4,21 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 console.log("Hello world!");
 
 // added by angela
-document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuButton = document.getElementById('mobile-menu');
-    const menu = document.querySelector('.menu');
 
-    mobileMenuButton.addEventListener('click', function () {
-        menu.classList.toggle('show');
-    });
-});
+// hamburger menu
+const menuBtn = document.querySelector('.menuToggle');
+const menu = document.querySelector('.nav-list')
+
+menuBtn.addEventListener("click", openMenu);
+
+function openMenu() {
+  menu.classList.toggle('show');
+}
+
+//
+
+
+
 
 //added by DoDo
 
