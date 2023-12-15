@@ -4,14 +4,10 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 console.log("Hello world!");
 
 // added by angela
-document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuButton = document.getElementById('mobile-menu');
-    const menu = document.querySelector('.menu');
+const menuBtn = document.querySelector('menuToggle');
+const 
 
-    mobileMenuButton.addEventListener('click', function () {
-        menu.classList.toggle('show');
-    });
-});
+
 
 //added by DoDo
 

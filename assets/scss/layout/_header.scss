@@ -21,6 +21,10 @@ header .container {
   width: 14em;
 }
 
+.menuToggle {
+  display: none;
+}
+
 .header-right {
   display: flex;
   justify-content: space-between;
@@ -58,11 +62,11 @@ header .container {
 }
 
 @media (max-width: 1024px) {
-  .menu {
+  .header-right {
     display: none;
   }
 
-  #mobile-menu {
+  .menuToggle {
     display: block;
   }
 }
