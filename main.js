@@ -4,8 +4,19 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 console.log("Hello world!");
 
 // added by angela
-const menuBtn = document.querySelector('menuToggle');
-const 
+
+// hamburger menu
+const menuBtn = document.querySelector('.menuToggle');
+const menu = document.querySelector('.nav-list')
+
+menuBtn.addEventListener("click", openMenu);
+
+function openMenu() {
+  menu.classList.toggle('show');
+}
+
+//
+
 
 
 

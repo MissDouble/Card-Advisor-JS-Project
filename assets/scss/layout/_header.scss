@@ -21,11 +21,7 @@ header .container {
   width: 14em;
 }
 
-.menuToggle {
-  display: none;
-}
-
-.header-right {
+.nav-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +32,7 @@ header .container {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   gap: 2em;
   font-weight: 700;
@@ -61,9 +58,43 @@ header .container {
   background-color: $secondary;
 }
 
+.menuToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+
 @media (max-width: 1024px) {
-  .header-right {
+  .nav-list {
     display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .nav-list.show {
+      display: flex;
+      height: 300px;
+      
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2em;
+    margin: 0 auto;
   }
 
   .menuToggle {
