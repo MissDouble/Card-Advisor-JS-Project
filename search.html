@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ8SURBVHgB5ZoxT9tAFMefk6jq0qqqKlVVhzpdmm5RpXZO+wla9oodNr4BC2IHZoTYgQ+AIDMsjIiBmAEhBiACCTGQGD/DCwk52+/u3tlG/KRIzjlOfv/4zrl7DsAzx4McqTU6rRB6vgfV4Ha/3gYB8gnQ6PheP1yPtppDrUFY8X7Dfj0AC9wHQPkw3IYQfMVe6xBuA6TLE1Yh3AXgyRPGIdwE0JMnjELIBzCTJ7RDyAawkye0QsgFkJEn2CFkAsjKE6wQ9gHcyBOZIewCuJUnUkOYB8hHnkgMYRYgX3lCGUI/QDHyxFgIvQDFyhMjISrsw8ohj+DUfJue8AJoyDe/v4LWr9cjbe/eVuJ2fAjhR04t3KhlvpQpj5JrSx8H8sHxLczMnUH3sh+3436kvXMDE9OncbsN1V7P70HWGND45pfnP8DkvzcjbSRJ8sTswgXMLnbBhodx0E4OoNnnz3e/jIkmgcHe/zwCC4Lw4GsdN9SfWJ4Bq+L+KvTAeABD+ZX1K/ZrNzavwZCM3wGLbx67z9bqJ2g20q80OLh//D02GcTKX+LHM2DZbVBoYuo0Fkw0iPb9+X8iJo8MAkj0eRJUhUjbl/W2abPROABWzKQGrErUlTwSB8ByHwgyLOxSHrkfxNEZGJ5fSOF/rkH3qi/a558yuAp53w47Jbnua1UlBoM49KKDPGAd5BDLulDJFiscxudCJVouclBP5kqyYOcgNhs1xPH9gYKLVhyyF/UFlg058KoSBRVuOfDLKgWUzjnkWRcSl0fyqsw5kUfyqI06k0dcV6edyiPmARDHN7E58GujKiK5hFnsXh7yiN0ZGCauVeLKrhqA0B85XgR3ksjwN0s0gfsAAAAASUVORK5CYII=" type="image/png">
     <title>Card Advisor</title>
-    <script type="module" crossorigin src="/Card-Advisor-JS-Project/assets/main-7fd27b9e.js"></script>
-    <link rel="stylesheet" href="/Card-Advisor-JS-Project/assets/main-4ccb2521.css">
+    <script type="module" crossorigin src="/Card-Advisor-JS-Project/assets/main-8471d9b2.js"></script>
+    <link rel="stylesheet" href="/Card-Advisor-JS-Project/assets/main-f2e3f305.css">
   </head>
   <body>
     <!-- header -->
@@ -43,8 +43,11 @@
                     <h1>進階搜尋</h1>
                     <p>我們為您提供一個簡單而強大的工具，協助您找到當下最適消費的信用卡</p>
                 </div>
-                <div class="search-bar">
-                    <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                <div class="search-bar"> 
+                    <div class="search-box">
+                        <input type="search" id="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                        <div class="search-icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ/SURBVHgB7ZhBbhMxFIb/gARdFLVILAbY+Ab0CMMJ6A2gO3b0Bg0noEt2tCcATpCwY0c4QWbJDip1gRDK8L+OB71amcQz9kxS1Z/0NB4n9vPz89jvGUgkEolNMkIHDLD/B8gXwAu+5lXV/w5/lcCMzxmfn38AU/RIawMeA2/4GHNw+55NppQjGlKgB+76/jHjLO8CH1l8TdmBP4ZyzLa4BL4gMnd8/pRVg5igWi5XyFLh4y3lOa15yBkeiUhZ6ijnTjdj9vMBQyODp8wppZKx8VhCtu1Et+USfIchocJvSvnPTHnBl6yafW3EMYaAyl45M5+jIxz0qZ4I478JdMdZOmMEYDjgmP2t5QlwqJTNEQHxoPYCItC4C9lDqmaKCMihZncvlJVHcgTSaAAVHajXc0RCTucGHZ1YdQ6YusC9fYZ4FMt0dKXRAB0qFNbtkSiUjj0E4nUSx2SkJoblCwSyyoCiLmQRXK0wdaGM4NlVH7Fe9zkiwUE/U8qDv61V38B39foSEbCezOv3e33mCqbap6OEETUSjar++o9MdSQpQZ0JiF/0KWzFoG9EiY1Ag2ZtSUg+XF4goa8zc5M2s2dnft5XJLo2pWQa+HW3yp1zW2Uoh6y7eMStlvvg72XtxMgHwAmL73F9wDt/+fOlCilC8E7qbfh74jS+uoGAynVZt1dWMU6+psszBndHCKTVrYSE2IsqJTRt2lHJp/scLF11iutbchQjWmMzNTdPXiYTd/vl+5nzn6APutPFlhqM4Ul4sFBhsSwrSiGHVNEQKogR2AZPhBDbExshGbEtJCO2hWTEtuAaMfiFcAxqIyR6fRrh/mgjyIXwjR18IpG4JfwDUxbbWwmSd+UAAAAASUVORK5CYII="></div>
+                    </div>
                     <div>熱門：<a href="#">CUBE 卡</a>、<a href="#">小樹點</a>、<a href="">樹享券</a></div>
                     <div class="search-bar-flexwrap">
                         <div>選擇消費</div>
@@ -68,7 +71,20 @@
                     </div>
                 </div>
             </div>
-            <div class="search-result"></div>
+            <div class="search-result container">
+                <div class="result-card">
+                    <div class="result-img"><img src ="/Card-Advisor-JS-Project/assets/cathaybk_cube-8e833602.png"></div>
+                    <div class="result-detail">
+                        <h2>國泰世華Cube卡</h2>
+                        <ul>
+                            <li>公告期間</li>
+                            <li>銀行</li>
+                            <li>url</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    <footer class="text-center py-4 bg-cus-grey1D text-white designer-button-1-2-fs fw-normal">Copyright © cardadvisor.</footer>    
+    <footer class="text-center py-4 bg-cus-grey1D text-white designer-button-1-2-fs fw-normal">Copyright © cardadvisor.</footer>    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
   </body>
