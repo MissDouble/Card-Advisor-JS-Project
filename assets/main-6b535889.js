@@ -12,7 +12,7 @@
               <li>${s.url}</li>
           </ul>
           </div>
-      </div>`}),Zs.innerHTML=n,console.log(filteredCards)}const to=document.querySelector(".card_container_1"),io=document.querySelector(".card_container_2");let no="https://card-advisor-json-server.onrender.com/cards",hn=[],so=document.querySelector(".test-button");document.querySelector(".card-list");function oo(){ro()}oo();function ro(){axios.get(no).then(function(i){hn=i.data,console.log(i.data)})}so.addEventListener("click",function(){let i=[],n="";hn.forEach(function(s){let l="";s.reward_type=="現金"?l=`<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+      </div>`}),Zs.innerHTML=n,console.log(filteredCards)}const to=document.querySelector(".card_container_1"),io=document.querySelector(".card_container_2");let no="https://card-advisor-json-server.onrender.com/cards",hn=[];document.querySelector(".test-button");document.querySelector(".card-list");function so(){oo()}so();function oo(){axios.get(no).then(function(i){hn=i.data,console.log(i.data),ro()})}function ro(){let i=[],n="";hn.forEach(function(s){let l="";s.reward_type=="現金"?l=`<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
                 monetization_on
                 </span>現金</button>`:l=`<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
                 change_circle
@@ -39,7 +39,7 @@
               
             </p>
             
-                <p class="display-5">（取值有問題先移除）</p>
+                <p class="display-5"></p>
                 <p class="designer-button-1-2-fs mt-1">海外消費回饋</p>
               </div>
               <div class="text-center py-10 mb-4">
@@ -68,4 +68,4 @@
                 </div></p>
               </div>
             </div>
-            `,i.push(n)}),console.log(i[1]),to.innerHTML=i[0],io.innerHTML=i[1]});
+            `,i.push(n)}),console.log(i[1]),to.innerHTML=i[0],io.innerHTML=i[1]}
