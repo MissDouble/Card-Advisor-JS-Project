@@ -17,8 +17,11 @@
                     <h1>進階搜尋</h1>
                     <p>我們為您提供一個簡單而強大的工具，協助您找到當下最適消費的信用卡</p>
                 </div>
-                <div class="search-bar">
-                    <input type="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                <div class="search-bar"> 
+                    <div class="search-box">
+                        <input type="search" id="search" placeholder="輸入關鍵字，搜尋該刷一張卡（例如：加油）">
+                        <div class="search-icon"><img src="../assets/images/icon/icon_search.png"></div>
+                    </div>
                     <div>熱門：<a href="#">CUBE 卡</a>、<a href="#">小樹點</a>、<a href="">樹享券</a></div>
                     <div class="search-bar-flexwrap">
                         <div>選擇消費</div>
@@ -42,8 +45,21 @@
                     </div>
                 </div>
             </div>
-            <div class="search-result"></div>
+            <div class="search-result container">
+                <div class="result-card">
+                    <div class="result-img"><img src ="../assets/images/img_cards/cathaybk_cube.png"></div>
+                    <div class="result-detail">
+                        <h2>國泰世華Cube卡</h2>
+                        <ul>
+                            <li>公告期間</li>
+                            <li>銀行</li>
+                            <li>url</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     <%- include('./layout/footer'); -%>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
   </body>

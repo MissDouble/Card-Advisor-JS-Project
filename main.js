@@ -15,7 +15,74 @@ function openMenu() {
   menu.classList.toggle('show');
 }
 
-//
+// search
+const searchInput = document.querySelector("#search");
+const searchButton = document.querySelector(".search-icon");
+let cardData = [];
+let resultList = document.querySelector(".search-result")
+let keyword = "";
+
+getSearchResult();
+
+searchInput.addEventListener("input", function(e) {
+  keyword = searchInput.value.toLowerCase();
+    // console.log(e.target.value);
+    console.log(searchInput.value.toLowerCase());
+});
+
+function getSearchResult() {
+    axios.get("https://card-advisor-json-server.onrender.com/cards")
+    .then(function(response){
+      cardData = response.data;
+      console.log(response.data);
+      // filterCard(keyword); 
+      // renderSearchResult(filteredCards);
+    })
+    .catch(function(error){
+      console.log(error);
+    });
+
+    filterCard(keyword);
+}
+
+// Display the filtered cards (replace this with your actual display logic)   
+searchButton.addEventListener("click",renderSearchResult());
+
+function filterCard(keyword) {
+  // Filter cards based on the search term
+
+  const filteredCards = cardData.filter(function(card) {
+    const cardName = card.card_name.toLowerCase();
+    const bank = card.bank.toLowerCase();
+
+    // Add more conditions for filtering if needed
+    return filteredCards;
+    // return cardName.includes(keyword) || bank.includes(keyword);
+});
+console.log(filteredCards);
+}
+filterCard(keyword);
+
+
+function renderSearchResult(cardData) {
+    // Replace this with your logic to display filtered cards
+    let str = "";
+    cardData.forEach(function(item){
+      str += `<div class="result-card">
+      <div class="result-img"><img src ="../assets/images/img_cards/${item.img}"></div>
+      <div class="result-detail">
+          <h2>${item.card_name}</h2>
+          <ul>
+              <li>${item.announcement_period}</li>
+              <li>${item.bank}</li>
+              <li>${item.url}</li>
+          </ul>
+          </div>
+      </div>`
+    })
+    resultList.innerHTML = str;
+    console.log(filteredCards);
+}
 
 
 
