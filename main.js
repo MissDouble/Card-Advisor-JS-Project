@@ -40,13 +40,14 @@ function getCardList(){
     .then(function(response){
         cardList = response.data;
         console.log(response.data);
+        renderCardItem1()
     })
 }
 
 
-button.addEventListener("click", function () {
+//button.addEventListener("click", function () {
 //document.addEventListener('DOMContentLoaded',function())
-//function compareCardInit(){
+function renderCardItem1(){
         let str1 = [];
         let str = '';
         cardList.forEach(function(item){
@@ -178,7 +179,7 @@ mobile_num = mobile_numberArray[0];
               
             </p>
             
-                <p class="display-5">（取值有問題先移除）</p>
+                <p class="display-5"></p>
                 <p class="designer-button-1-2-fs mt-1">海外消費回饋</p>
               </div>
               <div class="text-center py-10 mb-4">
@@ -215,7 +216,73 @@ mobile_num = mobile_numberArray[0];
         cardContainer_1.innerHTML= str1[0]
         cardContainer_2.innerHTML= str1[1]
         
-    });
+    };
 
-
+    // let deleteBtn1 = document.querySelector('.delete_btn_1');
+    // console.log(deleteBtn1);
+    // deleteBtn1.addEventListener('click',function(){
+    //     cardContainer_1.innerHTML = "";
+    // })
+    
+    // let deleteBtn2 = document.querySelector('.delete_btn_2');
+    // console.log(deleteBtn2);
+    // deleteBtn2.addEventListener('click',function(){
+    //     cardContainer_2.innerHTML = "";
+    // })
+    
+    // function deleteCardContainer(button,containerClass) {
+    //     // 找到被點擊的按鈕的父級元素（即包含整個卡片的 <div>）
+    //     var cardContainer = button.closest('.'+ containerClass);
         
+    //     // 確認找到了卡片的父級元素後，將其移除
+    //     if (cardContainer) {
+    //       cardContainer.remove();
+    //     }
+    //   }
+
+// 
+    //   document.addEventListener("DOMContentLoaded", function () {
+    //     // 假設 cardList 是你的資料陣列
+    //     let cardListTest = [
+    //         { card_name: "Card A", description: "Description A" },
+    //         { card_name: "Card B", description: "信用卡" },
+    //         // 其他卡片資料...
+    //     ];
+    
+    //     // 取得搜尋框和結果區域的元素
+    //     let searchInput = document.getElementById("searchInput");
+    //     let searchResults = document.getElementById("searchResults");
+    
+    //     // 監聽搜尋框的 input 事件
+    //     searchInput.addEventListener("input", function () {
+    //         // 取得搜尋框的值
+    //         let keyword = searchInput.value.toLowerCase();
+    
+    //         // 過濾符合條件的卡片
+    //         let filteredCards = cardListTest.filter(function (card) {
+    //             return card.card_name.toLowerCase().includes(keyword) ||
+    //                    card.description.toLowerCase().includes(keyword);
+    //         });
+    
+    //         // 顯示搜尋結果
+    //         displaySearchResults(filteredCards);
+    //     });
+    
+    //     // 顯示搜尋結果的函式
+    //     function displaySearchResults(results) {
+    //         // 清空先前的結果
+    //         searchResults.innerHTML = "";
+    
+    //         // 如果有搜尋結果，顯示在結果區域中
+    //         if (results.length > 0) {
+    //             results.forEach(function (result) {
+    //                 let cardElement = document.createElement("div");
+    //                 cardElement.textContent = result.card_name + " - " + result.description;
+    //                 searchResults.appendChild(cardElement);
+    //             });
+    //         } else {
+    //             // 如果沒有符合條件的結果，顯示提示訊息
+    //             searchResults.textContent = "沒有符合條件的卡片。";
+    //         }
+    //     }
+    // });

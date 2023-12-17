@@ -355,9 +355,11 @@ div h2 {
   background-image: url(../../images/img_discount_1.png);
 }
 .cus-position-1{
-  margin-top:-220px;
+  //margin-top:-220px;
+  margin-top: -275px;
+  margin-bottom: 50px;
   @media (max-width:1000px) {
-    margin-top:-150px;
+    //margin-top:-150px;
   }
 }
 .cus-position-2{

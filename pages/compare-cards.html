@@ -14,11 +14,11 @@
 <!-- header -->
     <%- include('./layout/header'); -%>
 <div class="container p-5">
-  <h2>信用卡比一比</h2>
+  <h2 class="mb-5">信用卡比一比</h2>
     <img class="d-block ms-auto cus-position-3" src="../assets/images/img_discount_1.png" alt="man">
-    <div class=" row gx-5">
-      <div class="col-6 col-md-4 px-10">
-        <div class="bg-white p-10">
+    <div class="row gx-5" id="compareList">
+      <div class="col-6 col-md-4 px-10 card_container_1">
+        <div class="bg-white p-10 ">
           <p class="h4 text-center mb-4">滙豐銀行現金回饋御璽卡</p>
           <img class="py-10 mb-4 img-fluid" src="../assets/images/img_cards/滙豐銀行現金回饋玉璽卡.png" alt="滙豐銀行現金回饋玉璽卡">
           <div class="text-center py-10 mb-4">
@@ -67,9 +67,14 @@
             <p class="designer-button-1-5-fs">自 2023 年 7 月 1 日至 2023 年 12 月 31 日</p>
           </div>
         </div>
+        <button class="btn d-block ms-auto delete_btn_1" onclick="deleteCardContainer(this,'card_container_1')">
+          <span class="material-symbols-outlined ">
+            delete
+            </span>
+          </button>
       </div>
-      <div class="col-6 col-md-4 px-10">
-        <div class="bg-white p-10">
+      <div class="col-6 col-md-4 px-10 card_container_2">
+        <div class="bg-white p-10 ">
           <p class="h4 text-center mb-4">玉山 U Bear 信用卡</p>
           <img class="py-10 mb-4 img-fluid" src="../assets/images/img_cards/玉山U Bear卡.png" alt="玉山U Bear卡">
           <div class="text-center py-10 mb-4">
@@ -118,10 +123,17 @@
             <p class="designer-button-1-5-fs">自 2023 年 3 月 1 日至 2024 年 2 月 29 日</p>
           </div>
         </div>
+        <button class="btn d-block ms-auto delete_btn_2" onclick="deleteCardContainer(this, 'card_container_2')">
+          <span class="material-symbols-outlined ">
+            delete
+          </span>
+        </button>
       </div>
-      <div class="col-12 col-md-4 px-10">
+      <div class="col-12 col-md-4 px-10 card_container_4" style="display:none">
+      </div>
+      <div class="col-12 col-md-4 px-10 card_container_3">
         <div class="bg-white p-10 sticky-top">
-          <div class=" py-11 bg-white">
+          <div class="py-11 bg-white">
               <!-- Modal 按鈕 -->
             <button type="button" class="d-block mx-auto text-center btn border-cus-grey9F rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding:28px;border:dashed;">
             <span class="align-top material-symbols-outlined text-cus-grey9F" >
@@ -135,9 +147,9 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-end">
+    <!-- <div class="d-flex justify-content-end">
       <img class="" src="../assets/images/img_discount_2.png" alt="woman">
-    </div>
+    </div> -->
 
   
     <!-- Modal 元件 -->
@@ -155,14 +167,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <input type="text" placeholder="請輸入信用卡關鍵字">
-            <button class="btn btn-primary text-white">搜尋</button>
-            <div class="search_result_block d-flex p-3">
-                <div class="result_card text-center">
+            <!-- <input type="text" class="search_input" placeholder="請輸入信用卡關鍵字"> -->
+            <input type="text" id="searchInput" placeholder="請輸入信用卡關鍵字">
+            <!-- <div id="searchResults"></div> -->
+            <!-- <button class="btn btn-primary text-white">搜尋</button> -->
+            <div class="search_result_block d-flex p-3" style="height:400px">
+              <div id="searchResults"></div>
+                <!-- <div class="result_card text-center">
                     <img class="" src="../assets/images/img_cards/國泰世華Cube卡.png" alt="credit card" style="width:200px">
                     <p>國泰世華Cube卡</p>
                     <button class="btn btn-primary text-white">加入比較</button>
-                </div>
+                </div> -->
             </div>
             <div class="recommandCards_block">
                 <p>熱門神卡</p>
@@ -177,11 +192,11 @@
                         <p>國泰世華Cube卡</p>
                         <button class="btn btn-primary text-white">加入比較</button>
                     </div>
-                    <div class="recommand_card p-3">
+                    <!-- <div class="recommand_card p-3">
                         <img class="" src="../assets/images/img_cards/國泰世華Cube卡.png" alt="credit card" style="width:200px">
                         <p>國泰世華Cube卡</p>
                         <button class="btn btn-primary text-white">加入比較</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
           </div>
@@ -193,12 +208,575 @@
       </div>
     </div>
     
-
-
-
   </div>
   <%- include('./layout/footer'); -%>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script type="module" src="../main.js"></script>
+  <script>
+
+//compare-cards 刪除資料
+const compareList = document.querySelector('#compareList');
+const compareCardContainer_1 = document.querySelector('.card_container_1');
+const compareCardContainer_2 = document.querySelector('.card_container_2');
+const compareCardContainer_4 = document.querySelector('.card_container_4');
+// const searchInput = document.querySelector('.search_input');
+// const searchResult = document.querySelector('search_result_block');
+//let str ='';
+
+let deleteBtn1 = document.querySelector('.delete_btn_1');
+//console.log(deleteBtn1);
+deleteBtn1.addEventListener('click',function(){
+  compareCardContainer_1.innerHTML = "";
+})
+
+let deleteBtn2 = document.querySelector('.delete_btn_2');
+//console.log(deleteBtn2);
+deleteBtn2.addEventListener('click',function(){
+  compareCardContainer_2.innerHTML = "";
+})
+
+function deleteCardContainer(button,containerClass) {
+    // 找到被點擊的按鈕的父級元素（即包含整個卡片的 <div>）
+    var cardContainer = button.closest('.'+ containerClass);
+    
+    // 確認找到了卡片的父級元素後，將其移除
+    if (cardContainer) {
+      cardContainer.remove();
+    }
+  }
+// document.addEventListener('DOMContentLoaded', function () {
+// cardList =[{card_name:"中國信託"},{card_name:"兆豐 BT21 卡"},{card_name:"滙豐匯鑽卡"}]
+
+// searchInput.addEventListener("input", function(){
+//   let keyWord = searchInput.value.toLowerCase();
+//   console.log(keyWord);
+//   let filteredCards = cardList.filter(function(card){
+//     return card.card_name.toLowerCase().includes(keyWord)
+//   })
+//   displaySearchResults(filteredCards);
+// });
+
+// function displaySearchResults(results){
+//   // 清空先前的結果
+//   //searchResult.innerHTML = "";
+//   // 如果有搜尋結果，顯示在結果區域中
+//   if (results.length > 0) {
+//     results.forEach(function (result) {
+//         let cardElement = document.createElement("div");
+//         cardElement.textContent = result.card_name + " - " + result.description;
+//         searchResult.appendChild(cardElement);
+//     });
+//   } else {
+//     // 如果沒有符合條件的結果，顯示提示訊息
+//     //searchResult.textContent = "沒有符合條件的卡片。";
+//   }
+// }
+
+
+// });
+let cardList = [];
+let url = `https://card-advisor-json-server.onrender.com/cards`;
+function getCardList(){
+    axios.get(url)
+    .then(function(response){
+        cardList = response.data;
+        console.log(response.data);
+        renderCardItemInit(cardList);
+    })
+}
+getCardList()
+// document.addEventListener("DOMContentLoaded", function () {
+//   let data = cardList;
+//   console.log(data);
+//   renderCardItem();
+// });
+
+console.log(cardList);
+document.addEventListener("DOMContentLoaded", function () {
+    // 假設 cardList 是你的資料陣列
+    // let cardList = [
+    //     { card_name: "Card A", description: "Description A" },
+    //     { card_name: "Card B", description: "信用卡" },
+    //     // 其他卡片資料...
+    // ];
+
+    // 取得搜尋框和結果區域的元素
+    let searchInput = document.getElementById("searchInput");
+    let searchResults = document.getElementById("searchResults");
+
+    // 監聽搜尋框的 input 事件
+    searchInput.addEventListener("input", function () {
+        // 取得搜尋框的值
+        let keyword = searchInput.value.toLowerCase();
+        if(keyword === ""){
+          clearSearchResults();
+            return;
+        }
+        // 過濾符合條件的卡片
+        let filteredCards = cardList.filter(function (card) {
+            return card.card_name.toLowerCase().includes(keyword) //||
+                   //card.description.toLowerCase().includes(keyword);
+        });
+        
+
+        // 顯示搜尋結果
+        displaySearchResults(filteredCards);
+        findCompareButton();
+    });
+
+    // 顯示搜尋結果的函式
+    function displaySearchResults(results) {
+        // 清空先前的結果
+        searchResults.innerHTML = "";
+
+        // 如果有搜尋結果，顯示在結果區域中
+        if (results.length > 0) {
+            results.forEach(function (result) {
+              console.log(result);
+                let cardElement = document.createElement("div");            
+                str = `<div class="result_card text-center p-3">
+                        <img class="" src="../assets/images/img_cards/${result.img}" alt="credit card" style="width:200px">
+                        <p>${result.card_name}</p>
+                        <button class="btn btn-primary text-white" data-name="${result.card_name}">加入比較</button>
+                </div>`
+                
+                cardElement.innerHTML = str
+                //cardElement.textContent = result.card_name //+ " - " + result.description;
+                searchResults.appendChild(cardElement);
+                
+            });
+        } else {
+            // 如果沒有符合條件的結果，顯示提示訊息
+            searchResults.textContent = "沒有符合條件的卡片。";
+        }
+    }
+});
+
+function clearSearchResults() {
+        searchResults.innerHTML = "";
+    }
+function findCompareButton(){
+    //document.addEventListener("DOMContentLoaded", function () {
+ // 取得所有帶有 data-name 屬性的按鈕
+    let compareButtons = document.querySelectorAll('[data-name]');
+    console.log(compareButtons);
+    // 逐一註冊按鈕的點擊事件
+    compareButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // 取得按鈕上的 data-name 屬性值
+            let cardName = button.getAttribute('data-name');
+            
+            // 在這裡可以進行相應的操作，例如加入比較清單等
+            console.log('按下的按鈕是', cardName);
+            // if(cardContainer_1==""){
+            //   cardContainer_1.innerHTML = `<h1>該筆=data-name值的數據`
+            // }else{
+            //   cardContainer_2.innerHTML = `<h1>該筆=data-name值的數據`
+            // }
+            let cardItem = document.createElement("div")
+            cardItem.classList.add("col-6", "col-md-4", "px-10", "card_container_1");
+            let targetCard = cardList.find(function(card){
+              return card.card_name === cardName
+            })
+            console.log(targetCard);
+            let ary =[];
+            ary.push(targetCard)
+            renderCardItem(ary);
+            // let modal = new bootstrap.Modal(document.querySelector('#exampleModal'))
+            // modal.hide();
+// 創建 DOMParser 實例
+// const parser = new DOMParser();
+
+// // 使用 DOMParser 將字符串轉換為 DOM 文檔
+// const doc = parser.parseFromString(str, 'text/html');
+
+// // 獲取新的 DOM 元素
+// const element = doc.body.firstChild;
+
+// // 將元素附加到你想要的地方
+// compareList.appendChild(element);
+            //cardItem.innerHTML = `<h1>該筆=data-name值的數據</h1>`
+            //compareList.appendChild(cardItem);
+        });
+    });
+  //});
+}
+
+
+function renderCardItemInit(cardList){
+  let str1 = [];
+        let str = '';
+        let count = 0;
+        console.log(cardList);
+        cardList.forEach(function(item){
+          count += 1;
+          console.log('count:',count);
+            let rewardType_button = '';
+            if(item.reward_type == "現金"){
+                rewardType_button =
+                `<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+                monetization_on
+                </span>現金</button>`
+            }else{
+                rewardType_button =
+                `<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+                change_circle
+                </span>點數</button>`
+            }
+            
+            console.log(item.card_name);
+            console.log(item.img);
+            console.log(item.general_payment.reward);
+            console.log(item.reward_type);
+            console.log(item.announcement_period);
+            console.log(item.annual_fee);
+            console.log(item.welcome_bonus.condition);
+            console.log(item.welcome_bonus.reward)
+        let online_shopping_reward_ary = [];
+        let mobile_payment_reward_ary = [];
+        let online_num ='';
+        let mobile_num ='';
+
+item.special_payment.forEach(function(payment){
+
+    let keys = Object.keys(payment);
+    console.log(keys);
+    let typeValue = payment[keys[0]].type;
+    let rewardValue = payment[keys[0]].reward;
+    let limitValue = payment[keys[0]].limit;//上限值還沒取到
+
+    console.log(typeValue);
+    console.log(parseInt(rewardValue));
+
+    if(typeValue === "online_shopping"){//如果不存在任何一個"online_shopping"，目前是undefined，要顯示'-'
+        console.log(rewardValue);
+        online_shopping_reward_ary.push(rewardValue);
+    }
+    if(typeValue === "mobile_payment"){//如果不存在任何一個"online_shopping"，目前是undefined，要顯示'-'
+        console.log(rewardValue);
+        mobile_payment_reward_ary.push(rewardValue);
+    }
+    // if(typeValue === "mobile_payment"){//如果不存在任何一個"online_shopping"，目前是undefined，要顯示'-'
+    //     console.log([keys,rewardValue]);
+    //     mobile_payment_reward_ary.push([keys,rewardValue]);
+    // }
+
+    
+
+let online_numberArray = online_shopping_reward_ary.map(function (percentageString) {
+    // 使用 parseFloat 解析字串並將百分比轉換為數字
+    return parseFloat(percentageString);
+  });
+  console.log(online_numberArray)
+  online_numberArray.sort(function(a,b){
+    return b - a
+})
+console.log(online_numberArray[0]);
+online_num = online_numberArray[0];
+
+console.log(mobile_payment_reward_ary);
+
+let mobile_numberArray = mobile_payment_reward_ary.map(function (percentageString) {
+    // 使用 parseFloat 解析字串並將百分比轉換為數字
+    return parseFloat(percentageString);
+  });
+  console.log(mobile_numberArray)
+  mobile_numberArray.sort(function(a,b){
+    return b[1] - a[1]
+})
+console.log(mobile_numberArray[0]);
+
+mobile_num = mobile_numberArray[0];
+            //console.log(item.special_payment.store[0].國外消費[reward])
+            
+                //Check if "國外消費" exists in special payment
+                const overseaInfo = item.special_payment.find(function (payment) {
+                  return payment["國外消費"];
+                });
+            
+                if (overseaInfo) {
+                console.log('海外消費回饋：',overseaInfo["國外消費"].reward);
+                //   str += `<li>${overseaInfo["國外消費"].reward}</li>`;
+                //   str += `<li>${overseaInfo["國外消費"].limit}</li>`;
+                //   str += `<li>${overseaInfo["國外消費"].condition}</li>`;
+                //   str += `<li>${overseaInfo["國外消費"].announcement_period}</li>`;
+                } else {
+                    console.log('海外消費回饋：','No Oversea Payment Information');
+                  //str += `<li>No Oversea Payment Information</li>`;
+                }
+                // str += `<li></li>`;
+                // str += `<li></li>`;
+                // str += `<li></li>`;
+
+
+                // const mobilePayment = item.special_payment.find(function(payment.type){
+                //     return payment.type["mobilePayment"];
+                // })
+            
+            //list.innerHTML = str;
+
+        })
+            
+            str =  `
+            <div class="bg-light px-10">
+              <p class="h4 text-center mb-4">${item.card_name}</p>
+              <a href='${item.url}'>
+                <img class="py-10 mb-4 img-fluid" src="../assets/images/img_cards/${item.img}" alt="${item.card_name}">
+              </a>
+              <div class="text-center py-10 mb-4">
+                <p class="display-5">${item.general_payment.reward}</p>
+                <p class="designer-button-1-2-fs mt-1">一般消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="h2">有上限</p>
+                <p class="designer-button-1-2-fs mt-1">回饋上限</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+              ${rewardType_button}
+                <p class="designer-button-1-2-fs mt-1">${item.reward_type}</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+              <p class="designer-button-1-5-fs">
+              
+            </p>
+            
+                <p class="display-5"></p>
+                <p class="designer-button-1-2-fs mt-1">海外消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">無上限</p>
+                <p class="display-5">${online_num}%</p>
+                <p class="designer-button-1-2-fs mt-1">網購消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">OPENPOINTS 回饋 最高</p>
+                <p class="display-5">${mobile_num}%</p>
+                <p class="designer-button-1-2-fs mt-1">行動支付回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">${item.welcome_bonus.condition}</p>
+                <p class="h2">${item.welcome_bonus.reward}<span class="display-5"></span></p>
+                <p class="designer-button-1-2-fs mt-1">首刷禮</p>
+              </div>
+              <div class="py-10">
+                <p class="designer-body-1-2-fs fw-bold mb-1">年費</p>
+                <p class="designer-button-1-5-fs">${item.annual_fee}</p>
+                <ul class="designer-button-1-5-fs ps-3">
+
+                </ul>  
+                <p class="designer-body-1-2-fs fw-bold mb-1">公告時間</p>
+                <p class="designer-button-1-5-fs">${item.announcement_period}</p>
+                </div></p>
+              </div>
+            </div>
+            <button class="btn d-block ms-auto delete_btn_2" onclick="deleteCardContainer(this, 'card_container_${count}')">
+              <span class="material-symbols-outlined ">
+                delete
+              </span>
+            </button>
+            ` 
+            str1.push(str);
+            console.log(str);
+        })
+        console.log(str1[1]);
+        
+
+        console.log('here');
+        compareCardContainer_1.innerHTML= str1[0]
+        compareCardContainer_2.innerHTML= str1[1]
+
+        console.log('here2');
+  //compareList.appendChild(str);
+}
+
+function renderCardItem(ary){
+  let str1 = [];
+        let str = '';
+        let count = 0;
+        console.log(cardList);
+        ary.forEach(function(item){
+          count += 1;
+          console.log('count:',count);
+            let rewardType_button = '';
+            if(item.reward_type == "現金"){
+                rewardType_button =
+                `<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+                monetization_on
+                </span>現金</button>`
+            }else{
+                rewardType_button =
+                `<button class="btn btn-dark display-8 align-top p-2"><span class="material-symbols-outlined align-top pe-1">
+                change_circle
+                </span>點數</button>`
+            }
+            
+            console.log(item.card_name);
+            console.log(item.img);
+            console.log(item.general_payment.reward);
+            console.log(item.reward_type);
+            console.log(item.announcement_period);
+            console.log(item.annual_fee);
+            console.log(item.welcome_bonus.condition);
+            console.log(item.welcome_bonus.reward)
+        let online_shopping_reward_ary = [];
+        let mobile_payment_reward_ary = [];
+        let online_num ='';
+        let mobile_num ='';
+
+item.special_payment.forEach(function(payment){
+
+    let keys = Object.keys(payment);
+    console.log(keys);
+    let typeValue = payment[keys[0]].type;
+    let rewardValue = payment[keys[0]].reward;
+    let limitValue = payment[keys[0]].limit;//上限值還沒取到
+
+    console.log(typeValue);
+    console.log(parseInt(rewardValue));
+
+    if(typeValue === "online_shopping"){//如果不存在任何一個"online_shopping"，目前是undefined，要顯示'-'
+        console.log(rewardValue);
+        online_shopping_reward_ary.push(rewardValue);
+    }
+    if(typeValue === "mobile_payment"){//如果不存在任何一個"online_shopping"，目前是undefined，要顯示'-'
+        console.log(rewardValue);
+        mobile_payment_reward_ary.push(rewardValue);
+    }
+    // if(typeValue === "mobile_payment"){//如果不存在任何一個"online_shopping"，目前是undefined，要顯示'-'
+    //     console.log([keys,rewardValue]);
+    //     mobile_payment_reward_ary.push([keys,rewardValue]);
+    // }
+
+    
+
+let online_numberArray = online_shopping_reward_ary.map(function (percentageString) {
+    // 使用 parseFloat 解析字串並將百分比轉換為數字
+    return parseFloat(percentageString);
+  });
+  console.log(online_numberArray)
+  online_numberArray.sort(function(a,b){
+    return b - a
+})
+console.log(online_numberArray[0]);
+online_num = online_numberArray[0];
+
+console.log(mobile_payment_reward_ary);
+
+let mobile_numberArray = mobile_payment_reward_ary.map(function (percentageString) {
+    // 使用 parseFloat 解析字串並將百分比轉換為數字
+    return parseFloat(percentageString);
+  });
+  console.log(mobile_numberArray)
+  mobile_numberArray.sort(function(a,b){
+    return b[1] - a[1]
+})
+console.log(mobile_numberArray[0]);
+
+mobile_num = mobile_numberArray[0];
+            //console.log(item.special_payment.store[0].國外消費[reward])
+            
+                //Check if "國外消費" exists in special payment
+                const overseaInfo = item.special_payment.find(function (payment) {
+                  return payment["國外消費"];
+                });
+            
+                if (overseaInfo) {
+                console.log('海外消費回饋：',overseaInfo["國外消費"].reward);
+                //   str += `<li>${overseaInfo["國外消費"].reward}</li>`;
+                //   str += `<li>${overseaInfo["國外消費"].limit}</li>`;
+                //   str += `<li>${overseaInfo["國外消費"].condition}</li>`;
+                //   str += `<li>${overseaInfo["國外消費"].announcement_period}</li>`;
+                } else {
+                    console.log('海外消費回饋：','No Oversea Payment Information');
+                  //str += `<li>No Oversea Payment Information</li>`;
+                }
+                // str += `<li></li>`;
+                // str += `<li></li>`;
+                // str += `<li></li>`;
+
+
+                // const mobilePayment = item.special_payment.find(function(payment.type){
+                //     return payment.type["mobilePayment"];
+                // })
+            
+            //list.innerHTML = str;
+
+        })
+            
+            str =  `
+            <div class="bg-light px-10">
+              <p class="h4 text-center mb-4">${item.card_name}</p>
+              <a href='${item.url}'>
+                <img class="py-10 mb-4 img-fluid" src="../assets/images/img_cards/${item.img}" alt="${item.card_name}">
+              </a>
+              <div class="text-center py-10 mb-4">
+                <p class="display-5">${item.general_payment.reward}</p>
+                <p class="designer-button-1-2-fs mt-1">一般消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="h2">有上限</p>
+                <p class="designer-button-1-2-fs mt-1">回饋上限</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+              ${rewardType_button}
+                <p class="designer-button-1-2-fs mt-1">${item.reward_type}</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+              <p class="designer-button-1-5-fs">
+              
+            </p>
+            
+                <p class="display-5"></p>
+                <p class="designer-button-1-2-fs mt-1">海外消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">無上限</p>
+                <p class="display-5">${online_num}%</p>
+                <p class="designer-button-1-2-fs mt-1">網購消費回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">OPENPOINTS 回饋 最高</p>
+                <p class="display-5">${mobile_num}%</p>
+                <p class="designer-button-1-2-fs mt-1">行動支付回饋</p>
+              </div>
+              <div class="text-center py-10 mb-4">
+                <p class="designer-button-1-5-fs">${item.welcome_bonus.condition}</p>
+                <p class="h2">${item.welcome_bonus.reward}<span class="display-5"></span></p>
+                <p class="designer-button-1-2-fs mt-1">首刷禮</p>
+              </div>
+              <div class="py-10">
+                <p class="designer-body-1-2-fs fw-bold mb-1">年費</p>
+                <p class="designer-button-1-5-fs">${item.annual_fee}</p>
+                <ul class="designer-button-1-5-fs ps-3">
+
+                </ul>  
+                <p class="designer-body-1-2-fs fw-bold mb-1">公告時間</p>
+                <p class="designer-button-1-5-fs">${item.announcement_period}</p>
+                </div></p>
+              </div>
+            </div>
+            <button class="btn d-block ms-auto delete_btn_2" onclick="deleteCardContainer(this, 'card_container_4')">
+              <span class="material-symbols-outlined ">
+                delete
+              </span>
+            </button>
+            ` 
+            str1.push(str);
+            console.log(str);
+            // compareCardContainer_4.innerHTML= str
+            // compareCardContainer_4.innerHTML= str1[0]
+            
+        })
+        console.log(str);
+        console.log('here');
+        compareCardContainer_4.innerHTML= str1[0]
+        compareCardContainer_4.style.display = '';
+
+        console.log('here2');
+  //compareList.appendChild(str);
+}
+
+
+  </script>
 </body>
 </html>
